@@ -1,0 +1,14 @@
+# System
+.DS_Store
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Build (on garde src/ mais pas les dépendances)
+gutenberg/node_modules/
+
+# Local config
+*.env
+.env.local

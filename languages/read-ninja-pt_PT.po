@@ -1,0 +1,563 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ReadNinja – Reading Progress Bar 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/read-ninja\n"
+"Last-Translator: Wilfrid BILLIOUW\n"
+"Language-Team: Português\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-11T19:21:10+00:00\n"
+"PO-Revision-Date: 2026-04-11T19:21:10+00:00\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: read-ninja\n"
+
+#: includes/class-post-meta.php:45
+#: includes/class-settings.php:44
+#: includes/class-settings.php:54
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:70
+msgid "Read Ninja - Reading Progress Bar"
+msgstr "Read Ninja - Reading Progress Bar"
+
+#. Plugin URI of the plugin
+#: read-ninja.php
+msgid "https://read-ninja.com"
+msgstr "https://read-ninja.com"
+
+#. Description of the plugin
+#: read-ninja.php
+msgid "Displays a reading progress bar on single posts."
+msgstr "Mostra uma barra de progresso de leitura nos artigos."
+
+#. Author of the plugin
+#: read-ninja.php
+msgid "Wilfrid BILLIOUW"
+msgstr "Wilfrid BILLIOUW"
+
+#: includes/class-post-meta.php:58
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:78
+msgid "Hériter des réglages globaux"
+msgstr "Herdar das definições globais"
+
+#: includes/class-post-meta.php:59
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:79
+msgid "Toujours afficher"
+msgstr "Mostrar sempre"
+
+#: includes/class-post-meta.php:60
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:80
+msgid "Toujours masquer"
+msgstr "Ocultar sempre"
+
+#: includes/class-post-meta.php:73
+#: includes/class-settings.php:74
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:87
+msgid "Fond de la barre"
+msgstr "Fundo da barra"
+
+#: includes/class-post-meta.php:84
+#: includes/class-settings.php:340
+msgid "Réinitialiser"
+msgstr "Repor"
+
+#: includes/class-post-meta.php:95
+#: includes/class-settings.php:72
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:110
+msgid "Position"
+msgstr "Posição"
+
+#: includes/class-post-meta.php:99
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:116
+#: gutenberg/src/index.js:144
+msgid "Hériter de la configuration"
+msgstr "Herdar da configuração"
+
+#: includes/class-post-meta.php:100
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:117
+msgid "Haut (fixe)"
+msgstr "Topo (fixo)"
+
+#: includes/class-post-meta.php:101
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:118
+msgid "Bas (fixe)"
+msgstr "Base (fixa)"
+
+#: includes/class-post-meta.php:102
+#: includes/class-settings.php:296
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:119
+msgid "Personnalisée"
+msgstr "Personalizada"
+
+#: includes/class-post-meta.php:108
+#: includes/class-settings.php:306
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:127
+msgid ".ma-classe ou #mon-id"
+msgstr ".minha-classe ou #meu-id"
+
+#: includes/class-post-meta.php:117
+msgid "Désactiver le threshold trigger pour cet article"
+msgstr "Desativar o threshold trigger para este artigo"
+
+#: includes/class-settings.php:45
+msgid "Progress Bar"
+msgstr "Progress Bar"
+
+#: includes/class-settings.php:55
+msgid "Réglages"
+msgstr "Definições"
+
+#: includes/class-settings.php:67
+msgid "Style"
+msgstr "Estilo"
+
+#: includes/class-settings.php:68
+msgid "Affichage"
+msgstr "Exibição"
+
+#: includes/class-settings.php:70
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:138
+#: gutenberg/src/index.js:154
+msgid "Couleur"
+msgstr "Cor"
+
+#: includes/class-settings.php:71
+msgid "Hauteur"
+msgstr "Altura"
+
+#: includes/class-settings.php:73
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:124
+msgid "Sélecteur CSS cible"
+msgstr "Seletor CSS de destino"
+
+#: includes/class-settings.php:75
+msgid "Opacité"
+msgstr "Opacidade"
+
+#: includes/class-settings.php:76
+msgid "Z-index"
+msgstr "Z-index"
+
+#: includes/class-settings.php:77
+msgid "Décalage sticky header"
+msgstr "Deslocamento do header sticky"
+
+#: includes/class-settings.php:78
+msgid "Articles"
+msgstr "Artigos"
+
+#: includes/class-settings.php:79
+msgid "Pages"
+msgstr "Páginas"
+
+#: includes/class-settings.php:80
+msgid "Masquer sur l'accueil"
+msgstr "Ocultar na página inicial"
+
+#: includes/class-settings.php:81
+msgid "Affichage sur les appareils"
+msgstr "Exibição nos dispositivos"
+
+#: includes/class-settings.php:83
+msgid "Progression"
+msgstr "Progresso"
+
+#: includes/class-settings.php:84
+msgid "Source de progression"
+msgstr "Fonte do progresso"
+
+#: includes/class-settings.php:86
+msgid "Indicateur de progression"
+msgstr "Indicador de progresso"
+
+#: includes/class-settings.php:87
+msgid "Type d'indicateur"
+msgstr "Tipo de indicador"
+
+#: includes/class-settings.php:88
+msgid "Position de l'indicateur"
+msgstr "Posição do indicador"
+
+#: includes/class-settings.php:89
+msgid "Taille du texte"
+msgstr "Tamanho do texto"
+
+#: includes/class-settings.php:90
+msgid "Couleur de l'indicateur"
+msgstr "Cor do indicador"
+
+#: includes/class-settings.php:91
+msgid "Mots par minute"
+msgstr "Palavras por minuto"
+
+#: includes/class-settings.php:92
+msgid "Format du temps"
+msgstr "Formato do tempo"
+
+#: includes/class-settings.php:93
+msgid "Texte avant le temps"
+msgstr "Texto antes do tempo"
+
+#: includes/class-settings.php:94
+msgid "Texte après le temps"
+msgstr "Texto depois do tempo"
+
+#: includes/class-settings.php:161
+msgid "Réglages enregistrés"
+msgstr "Definições guardadas"
+
+#: includes/class-settings.php:181
+msgid "Général"
+msgstr "Geral"
+
+#: includes/class-settings.php:203
+msgid "Pro actif"
+msgstr "Pro ativo"
+
+#: includes/class-settings.php:206
+msgid "Version gratuite"
+msgstr "Versão gratuita"
+
+#: includes/class-settings.php:228
+msgid "Aperçu en direct"
+msgstr "Pré-visualização em tempo real"
+
+#: includes/class-settings.php:232
+msgid "La barre se met à jour en temps réel."
+msgstr "A barra atualiza-se em tempo real."
+
+#: includes/class-settings.php:242
+msgid "Enregistrer les réglages"
+msgstr "Guardar definições"
+
+#: includes/class-rpb-upgrade.php:315
+msgid "Passer à Pro"
+msgstr "Passar para Pro"
+
+#: includes/class-rpb-upgrade.php:301
+msgid "En savoir plus →"
+msgstr "Saber mais →"
+
+#: includes/class-settings.php:294
+msgid "Haut"
+msgstr "Topo"
+
+#: includes/class-settings.php:295
+msgid "Bas"
+msgstr "Base"
+
+#: includes/class-settings.php:309
+msgid "La barre sera insérée comme premier enfant de l'élément ciblé. Si le sélecteur ne correspond à aucun élément, la barre se positionne en haut par défaut."
+msgstr "A barra será inserida como primeiro filho do elemento de destino. Se o seletor não corresponder a nenhum elemento, a barra é posicionada no topo por defeito."
+
+#: includes/class-settings.php:370
+#: includes/class-settings.php:521
+#: includes/class-settings.php:566
+msgid "Automatique"
+msgstr "Automático"
+
+#: includes/class-settings.php:376
+msgid "Valeur fixe"
+msgstr "Valor fixo"
+
+#: includes/class-settings.php:387
+msgid "« Automatique » détecte la hauteur du header fixe/sticky de votre thème. « Valeur fixe » applique un décalage en pixels."
+msgstr "«Automático» deteta a altura do header fixo/sticky do seu tema. «Valor fixo» aplica um deslocamento em píxeis."
+
+#: includes/class-settings.php:409
+msgid "Tous les appareils"
+msgstr "Todos os dispositivos"
+
+#: includes/class-settings.php:410
+msgid "Desktop uniquement (masqué sur mobile)"
+msgstr "Apenas desktop (oculto no mobile)"
+
+#: includes/class-settings.php:411
+msgid "Mobile uniquement (masqué sur desktop)"
+msgstr "Apenas mobile (oculto no desktop)"
+
+#: includes/class-settings.php:412
+msgid "Masqué sur mobile"
+msgstr "Oculto no mobile"
+
+#: includes/class-settings.php:424
+msgid "Breakpoint mobile : largeur < 768px"
+msgstr "Breakpoint mobile: largura < 768px"
+
+#: includes/class-settings.php:431
+msgid "Hauteur de l'article"
+msgstr "Altura do artigo"
+
+#: includes/class-settings.php:432
+msgid "Hauteur de la page"
+msgstr "Altura da página"
+
+#: includes/class-settings.php:442
+msgid "« Hauteur de l'article » mesure la progression sur le contenu uniquement, « Hauteur de la page » sur l'ensemble de la page."
+msgstr "«Altura do artigo» mede o progresso apenas no conteúdo, «Altura da página» na página inteira."
+
+#: includes/class-settings.php:473
+msgid "Aucun"
+msgstr "Nenhum"
+
+#: includes/class-settings.php:474
+msgid "Pourcentage"
+msgstr "Percentagem"
+
+#: includes/class-settings.php:475
+msgid "Temps restant"
+msgstr "Tempo restante"
+
+#: includes/class-settings.php:476
+msgid "Les deux"
+msgstr "Ambos"
+
+#: includes/class-settings.php:487
+msgid "ou"
+msgstr "ou"
+
+#: includes/class-settings.php:495
+msgid "Flottant dans la barre"
+msgstr "Flutuante na barra"
+
+#: includes/class-settings.php:496
+msgid "À gauche"
+msgstr "À esquerda"
+
+#: includes/class-settings.php:497
+msgid "À droite"
+msgstr "À direita"
+
+#: includes/class-settings.php:509
+msgid "« Flottant » suit le bord de la barre remplie. « Gauche » et « Droite » fixent l'indicateur aux extrémités."
+msgstr "«Flutuante» segue a borda da barra preenchida. «Esquerda» e «Direita» fixam o indicador nas extremidades."
+
+#: includes/class-settings.php:527
+msgid "Taille fixe"
+msgstr "Tamanho fixo"
+
+#: includes/class-settings.php:538
+msgid "« Automatique » adapte la taille du texte à la hauteur de la barre. « Taille fixe » applique une valeur en pixels (8–32)."
+msgstr "«Automático» adapta o tamanho do texto à altura da barra. «Tamanho fixo» aplica um valor em píxeis (8–32)."
+
+#: includes/class-settings.php:572
+msgid "Couleur fixe"
+msgstr "Cor fixa"
+
+#: includes/class-settings.php:582
+msgid "« Automatique » adapte la couleur du texte en fonction de l'arrière-plan pour rester lisible."
+msgstr "«Automático» adapta a cor do texto em função do fundo para se manter legível."
+
+#: includes/class-settings.php:622
+msgid "Moyenne adulte : 200 mots/min"
+msgstr "Média adulta: 200 palavras/min"
+
+#: includes/class-settings.php:638
+msgid "Minutes uniquement"
+msgstr "Apenas minutos"
+
+#: includes/class-settings.php:642
+msgid "Minutes et secondes"
+msgstr "Minutos e segundos"
+
+#: includes/class-settings.php:654
+msgid "Texte affiché avant le temps. Exemple : « Encore » → « Encore 3 min restantes »."
+msgstr "Texto mostrado antes do tempo. Exemplo: «Ainda» → «Ainda 3 min restantes»."
+
+#: includes/class-settings.php:663
+msgid "Texte affiché après le temps. Exemple : « min restantes »."
+msgstr "Texto mostrado depois do tempo. Exemplo: «min restantes»."
+
+#: includes/class-rpb-upgrade.php:69
+msgid "Fonctionnalités Pro"
+msgstr "Funcionalidades Pro"
+
+#: includes/class-rpb-upgrade.php:92
+msgid "Ces fonctionnalités sont disponibles dans ReadNinja Pro. Cliquez sur « Débloquer » pour les activer."
+msgstr "Estas funcionalidades estão disponíveis no ReadNinja Pro. Clique em «Desbloquear» para as ativar."
+
+#: includes/class-rpb-upgrade.php:103
+msgid "Aperçu Pro"
+msgstr "Pré-visualização Pro"
+
+#: includes/class-rpb-upgrade.php:115
+msgid "Débloquer avec Pro →"
+msgstr "Desbloquear com o Pro →"
+
+#: includes/class-rpb-upgrade.php:124
+msgid "Barre en dégradé"
+msgstr "Barra com gradiente"
+
+#: includes/class-rpb-upgrade.php:125
+msgid "Remplacez la couleur unie par un dégradé de 2 couleurs avec angle personnalisable."
+msgstr "Substitua a cor sólida por um gradiente de 2 cores com ângulo personalizável."
+
+#: includes/class-rpb-upgrade.php:129
+msgid "Avancement séquentiel"
+msgstr "Progresso por etapas"
+
+#: includes/class-rpb-upgrade.php:130
+msgid "Faites avancer la barre par paliers fixes (5, 10, 25 %) avec animation fluide."
+msgstr "Faça a barra avançar em passos fixos (5, 10, 25 %) com animação fluida."
+
+#: includes/class-rpb-upgrade.php:134
+msgid "Threshold trigger"
+msgstr "Threshold trigger"
+
+#: includes/class-rpb-upgrade.php:135
+msgid "Déclenchez une action JS personnalisée à un seuil de lecture (75 %, 90 %…)."
+msgstr "Acione uma ação JS personalizada num limiar de leitura (75 %, 90 %…)."
+
+#: includes/class-rpb-upgrade.php:139
+msgid "Conditions d'affichage avancées"
+msgstr "Condições de exibição avançadas"
+
+#: includes/class-rpb-upgrade.php:140
+msgid "Ciblez les CPT, archives, taxonomies et templates FSE de votre choix."
+msgstr "Direcione os CPTs, arquivos, taxonomias e templates FSE da sua escolha."
+
+#: includes/class-rpb-upgrade.php:144
+msgid "Analytics de lecture"
+msgstr "Analytics de leitura"
+
+#: includes/class-rpb-upgrade.php:145
+msgid "Mesurez la profondeur de lecture et le taux de complétion par article."
+msgstr "Meça a profundidade de leitura e a taxa de conclusão por artigo."
+
+#: includes/class-rpb-upgrade.php:149
+msgid "Personnalisation par article"
+msgstr "Personalização por artigo"
+
+#: includes/class-rpb-upgrade.php:150
+msgid "Définissez la couleur, la hauteur ou le dégradé spécifique d'un article."
+msgstr "Defina a cor, a altura ou o gradiente específicos de um artigo."
+
+#: includes/class-rpb-upgrade.php:190
+msgid "Merci d'utiliser ReadNinja ! Débloquez les analytics de lecture, les dégradés et le ciblage avancé avec ReadNinja Pro."
+msgstr "Obrigado por usar o ReadNinja! Desbloqueie analytics de leitura, gradientes e segmentação avançada com o ReadNinja Pro."
+
+#: includes/class-rpb-upgrade.php:193
+msgid "Découvrir Pro →"
+msgstr "Descobrir Pro →"
+
+#: includes/class-rpb-upgrade.php:230
+msgid "Analytics"
+msgstr "Analytics"
+
+#: includes/class-rpb-upgrade.php:240
+msgid "Analytics de lecture — ReadNinja Pro"
+msgstr "Analytics de leitura — ReadNinja Pro"
+
+#: includes/class-rpb-upgrade.php:244
+msgid "Voyez jusqu'où scrollent vos lecteurs sur chaque article"
+msgstr "Veja até onde os seus leitores rolam em cada artigo"
+
+#: includes/class-rpb-upgrade.php:245
+msgid "Identifiez vos contenus les plus engageants"
+msgstr "Identifique os seus conteúdos mais envolventes"
+
+#: includes/class-rpb-upgrade.php:246
+msgid "Optimisez vos articles grâce aux données réelles"
+msgstr "Otimize os seus artigos com dados reais"
+
+#: includes/class-rpb-upgrade.php:274
+msgid "Débloquez les analytics"
+msgstr "Desbloqueie as analytics"
+
+#: includes/class-rpb-upgrade.php:277
+msgid "Passer à ReadNinja Pro — dès 29€/an"
+msgstr "Atualizar para o ReadNinja Pro — a partir de 29€/ano"
+
+#: includes/class-rpb-upgrade.php:280
+msgid "Satisfait ou remboursé 30 jours"
+msgstr "Satisfeito ou reembolsado em 30 dias"
+
+#: includes/class-rpb-upgrade.php:299
+msgid "ReadNinja Pro — Analytics · Dégradés · Ciblage avancé · Support prioritaire"
+msgstr "ReadNinja Pro — Analytics · Gradientes · Segmentação avançada · Suporte prioritário"
+
+#: includes/class-rpb-upgrade.php:328
+msgid "Documentation"
+msgstr "Documentação"
+
+#: includes/class-rpb-upgrade.php:333
+msgid "Support"
+msgstr "Suporte"
+
+#. Plugin Name of the plugin
+#: read-ninja.php
+msgid "Read Ninja"
+msgstr ""
+
+#. Author URI of the plugin
+#: read-ninja.php
+msgid "https://read-ninja.com/about"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:103
+msgid "Réinitialiser le fond"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:145
+msgid "Couleur fixe personnalisée"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:146
+msgid "Dégradé personnalisé"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:169
+msgid "Réinitialiser la couleur"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:179
+msgid "Couleur de départ"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:191
+msgid "Couleur de fin"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:206
+msgid "Réinitialiser le dégradé"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:214
+msgid "Hauteur personnalisée (px)"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:228
+msgid "Réinitialiser la hauteur"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:237
+msgid "Désactiver le threshold trigger"
+msgstr ""
+
+#: gutenberg/build/index.js:1
+#: gutenberg/src/index.js:238
+msgid "Empêche le déclenchement automatique sur cet article."
+msgstr ""

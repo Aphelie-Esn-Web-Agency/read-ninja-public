@@ -1,0 +1,6 @@
+/* Reading Progress Bar — styles statiques */
+
+/* Éléments cachés à révéler via le threshold trigger (action: show-element) */
+.rpb-hidden {
+	display: none !important;
+}
