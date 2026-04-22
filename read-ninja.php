@@ -7,7 +7,7 @@
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            Wilfrid BILLIOUW
- * Author URI:        https://read-ninja.com/about
+ * Author URI:        https://read-ninja.com
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       read-ninja
