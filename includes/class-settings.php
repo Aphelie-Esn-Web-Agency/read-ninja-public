@@ -152,6 +152,7 @@ class RPB_Settings {
 			wp_localize_script( 'rpb-admin-preview', 'rpbAdminSettings', [ 'current' => $preview_settings ] );
 
 			wp_enqueue_script( 'rpb-admin-ui', RPB_URL . 'admin/js/rpb-admin-ui.js', [ 'rpb-admin-preview' ], RPB_VERSION, true );
+			wp_enqueue_script( 'rpb-admin-settings-toggles', RPB_URL . 'assets/js/admin/admin-settings-toggles.js', [ 'rpb-admin-ui' ], RPB_VERSION, true );
 		} else {
 			// Page Analytics : rpb-admin-ui sans dépendance preview.
 			wp_enqueue_script( 'rpb-admin-ui', RPB_URL . 'admin/js/rpb-admin-ui.js', [], RPB_VERSION, true );
@@ -308,19 +309,6 @@ class RPB_Settings {
 		<p class="description">
 			<?php esc_html_e( 'La barre sera insérée comme premier enfant de l\'élément ciblé. Si le sélecteur ne correspond à aucun élément, la barre se positionne en haut par défaut.', 'read-ninja' ); ?>
 		</p>
-		<script>
-		function rpbToggleCustomSelector( val ) {
-			var el = document.getElementById( 'rpb_custom_selector' );
-			if ( el ) {
-				var tr = el.closest( 'tr' );
-				if ( tr ) { tr.style.display = val === 'custom' ? '' : 'none'; }
-			}
-		}
-		(function () {
-			var pos = document.getElementById( 'rpb_position' );
-			if ( pos ) { rpbToggleCustomSelector( pos.value ); }
-		})();
-		</script>
 		<?php
 	}
 
@@ -386,19 +374,6 @@ class RPB_Settings {
 		<p class="description">
 			<?php esc_html_e( "« Automatique » détecte la hauteur du header fixe/sticky de votre thème. « Valeur fixe » applique un décalage en pixels.", 'read-ninja' ); ?>
 		</p>
-		<script>
-		function rpbToggleStickyOffset( mode ) {
-			var wrap   = document.getElementById( 'rpb_sticky_offset_wrap' );
-			var hidden = document.getElementById( 'rpb_sticky_offset' );
-			if ( mode === 'auto' ) {
-				wrap.style.display = 'none';
-				hidden.value = '0';
-			} else {
-				wrap.style.display = '';
-				hidden.value = document.getElementById( 'rpb_sticky_offset_input' ).value;
-			}
-		}
-		</script>
 		<?php
 	}
 
@@ -537,20 +512,6 @@ class RPB_Settings {
 		<p class="description">
 			<?php esc_html_e( "« Automatique » adapte la taille du texte à la hauteur de la barre. « Taille fixe » applique une valeur en pixels (8–32).", 'read-ninja' ); ?>
 		</p>
-		<script>
-		function rpbToggleIndicatorSize( mode ) {
-			var wrap   = document.getElementById( 'rpb_indicator_size_input_wrap' );
-			var hidden = document.getElementById( 'rpb_indicator_size' );
-			if ( mode === 'auto' ) {
-				wrap.style.display = 'none';
-				hidden.value = 'auto';
-			} else {
-				wrap.style.display = '';
-				hidden.value = document.getElementById( 'rpb_indicator_size_input' ).value;
-			}
-			hidden.dispatchEvent( new Event( 'change', { bubbles: true } ) );
-		}
-		</script>
 		<?php
 	}
 
@@ -581,35 +542,6 @@ class RPB_Settings {
 		<p class="description">
 			<?php esc_html_e( "« Automatique » adapte la couleur du texte en fonction de l'arrière-plan pour rester lisible.", 'read-ninja' ); ?>
 		</p>
-		<script>
-		function rpbToggleIndicatorColor( mode ) {
-			var wrap   = document.getElementById( 'rpb_indicator_color_picker_wrap' );
-			var hidden = document.getElementById( 'rpb_indicator_color' );
-			if ( mode === 'auto' ) {
-				wrap.style.display = 'none';
-				hidden.value = 'auto';
-			} else {
-				wrap.style.display = '';
-				var picker = document.getElementById( 'rpb_indicator_color_picker' );
-				hidden.value = picker.value;
-			}
-			hidden.dispatchEvent( new Event( 'change', { bubbles: true } ) );
-		}
-		(function () {
-			var picker = document.getElementById( 'rpb_indicator_color_picker' );
-			if ( picker ) {
-				picker.addEventListener( 'input', function () {
-					document.getElementById( 'rpb_indicator_color' ).dispatchEvent( new Event( 'change', { bubbles: true } ) );
-				} );
-			}
-			var sizeInput = document.getElementById( 'rpb_indicator_size_input' );
-			if ( sizeInput ) {
-				sizeInput.addEventListener( 'input', function () {
-					document.getElementById( 'rpb_indicator_size' ).dispatchEvent( new Event( 'change', { bubbles: true } ) );
-				} );
-			}
-		})();
-		</script>
 		<?php
 	}
 
@@ -661,48 +593,6 @@ class RPB_Settings {
 			esc_attr( $opts['time_suffix'] )
 		);
 		echo '<p class="description">' . esc_html__( 'Texte affiché après le temps. Exemple : « min restantes ».', 'read-ninja' ) . '</p>';
-		?>
-		<script>
-		function rpbToggleIndicatorFields( val ) {
-			var active = val !== 'none';
-			var timeActive = val === 'time' || val === 'both';
-			// Always-visible-when-active fields
-			var activeIds = [ 'rpb_indicator_position', 'rpb_indicator_size', 'rpb_indicator_color' ];
-			activeIds.forEach( function ( id ) {
-				var el = document.getElementById( id );
-				if ( el ) {
-					var tr = el.closest( 'tr' );
-					if ( tr ) { tr.style.display = active ? '' : 'none'; }
-				}
-			} );
-			// Time-specific fields
-			var ids = [ 'rpb_wpm', 'rpb_time_format', 'rpb_time_prefix', 'rpb_time_suffix' ];
-			ids.forEach( function ( id ) {
-				var el = document.getElementById( id );
-				if ( el ) {
-					var tr = el.closest( 'tr' );
-					if ( tr ) { tr.style.display = timeActive ? '' : 'none'; }
-				}
-			} );
-		}
-		function rpbUpdateTimeFormatExamples() {
-			var prefix = document.getElementById( 'rpb_time_prefix' );
-			var suffix = document.getElementById( 'rpb_time_suffix' );
-			var p = ( prefix ? prefix.value : '' ).trim();
-			var s = ( suffix ? suffix.value : '' ).trim();
-			var minEl = document.getElementById( 'rpb_time_format_example_min' );
-			var msEl  = document.getElementById( 'rpb_time_format_example_ms' );
-			var pre = p ? p + ' ' : '';
-			var suf = s ? ' ' + s : '';
-			if ( minEl ) { minEl.textContent = pre + '3' + suf; }
-			if ( msEl )  { msEl.textContent  = pre + '3:12' + suf; }
-		}
-		(function () {
-			var checked = document.querySelector( 'input[name="rpb_settings[indicator_type]"]:checked' );
-			if ( checked ) { rpbToggleIndicatorFields( checked.value ); }
-		})();
-		</script>
-		<?php
 	}
 
 	// --- Private helpers --------------------------------------------------

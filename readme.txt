@@ -1,5 +1,5 @@
 === Read Ninja ===
-Contributors:      wbilliouw
+Contributors:      wbilliouw, killwil777
 Tags:              reading, progress, bar, scroll, read-ninja
 Requires at least: 6.0
 Tested up to:      6.9

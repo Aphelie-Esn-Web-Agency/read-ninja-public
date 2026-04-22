@@ -194,22 +194,6 @@ class RPB_Upgrade {
 				</a>
 			</div>
 		</div>
-		<script>
-		(function () {
-			var notice = document.querySelector('.rpb-notice-upgrade');
-			if (!notice) return;
-			notice.addEventListener('click', function (e) {
-				if (!e.target.classList.contains('notice-dismiss')) return;
-				var nonce = notice.getAttribute('data-rpb-nonce');
-				var data = new FormData();
-				data.append('action', 'rpb_dismiss_notice');
-				data.append('_ajax_nonce', nonce);
-				if (typeof window.fetch === 'function') {
-					window.fetch(window.ajaxurl, { method: 'POST', credentials: 'same-origin', body: data });
-				}
-			});
-		})();
-		</script>
 		<?php
 	}
 
@@ -348,6 +332,13 @@ class RPB_Upgrade {
 			RPB_URL . 'assets/css/rpb-admin-upgrade.css',
 			[ 'rpb-admin' ],
 			RPB_VERSION
+		);
+		wp_enqueue_script(
+			'rpb-admin-notice-dismiss',
+			RPB_URL . 'assets/js/admin/admin-notice-dismiss.js',
+			[],
+			RPB_VERSION,
+			true
 		);
 	}
 }
