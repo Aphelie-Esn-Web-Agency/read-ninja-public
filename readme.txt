@@ -24,6 +24,11 @@ Reading Progress Bar adds a fixed progress bar to your single posts, giving read
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. The progress bar will appear automatically on single posts.
 
+== Source Code ==
+
+The full source code, including Gutenberg block source files and build tools,
+is available at: https://github.com/Aphelie-Esn-Web-Agency/read-ninja-public
+
 == Changelog ==
 
 = 1.1.0 =
