@@ -1,11 +1,11 @@
 'use strict';
 
 (function () {
-	const color  = rpbSettings.colorOverride  || rpbSettings.color;
-	const height = rpbSettings.heightOverride || rpbSettings.height;
+	const color  = readninjaSettings.colorOverride  || readninjaSettings.color;
+	const height = readninjaSettings.heightOverride || readninjaSettings.height;
 
-	// Gradient mode — only active when the Pro plugin injects rpbSettings.gradient.
-	const grad = (rpbSettings.gradient && rpbSettings.gradient.enabled) ? rpbSettings.gradient : null;
+	// Gradient mode — only active when the Pro plugin injects readninjaSettings.gradient.
+	const grad = (readninjaSettings.gradient && readninjaSettings.gradient.enabled) ? readninjaSettings.gradient : null;
 
 	let background;
 	if (grad) {
@@ -17,24 +17,24 @@
 		background = color;
 	}
 
-	const position = rpbSettings.position || 'top';
-	const zIndex   = rpbSettings.zIndex;
+	const position = readninjaSettings.position || 'top';
+	const zIndex   = readninjaSettings.zIndex;
 
 	// ---- Track (background pleine largeur) --------------------------------
 	// Créé uniquement si backgroundColor est défini. Il s'affiche derrière la
 	// barre de progression et donne la couleur de fond sur toute la largeur.
 	let track = null;
-	if (rpbSettings.backgroundColor) {
+	if (readninjaSettings.backgroundColor) {
 		track = document.createElement('div');
-		track.id = 'rpb-bar-track';
+		track.id = 'readninja-bar-track';
 		track.style.cssText = [
 			'position:fixed',
 			position === 'bottom' ? 'bottom:0' : 'top:0',
 			'left:0',
 			'width:100%',
 			'height:' + height + 'px',
-			'background:' + rpbSettings.backgroundColor,
-			'opacity:' + (rpbSettings.opacity / 100),
+			'background:' + readninjaSettings.backgroundColor,
+			'opacity:' + (readninjaSettings.opacity / 100),
 			'z-index:' + zIndex,
 			'pointer-events:none',
 		].join(';');
@@ -42,14 +42,14 @@
 
 	// ---- Barre de progression (fill) --------------------------------------
 	const bar = document.createElement('div');
-	bar.id = 'rpb-bar';
+	bar.id = 'readninja-bar';
 
 	const cssProps = [
 		'left:0',
 		'width:0%',
 		'height:' + height + 'px',
 		'background:' + background,
-		'opacity:' + (rpbSettings.opacity / 100),
+		'opacity:' + (readninjaSettings.opacity / 100),
 		// z-index légèrement supérieur au track pour s'afficher par-dessus
 		'z-index:' + (track ? String(parseInt(zIndex, 10) + 1) : zIndex),
 		'transition:width 0.1s linear',
@@ -58,8 +58,8 @@
 	if (grad) { cssProps.push('background-size:100vw 100%'); }
 
 	// ---- Positionnement + insertion dans le DOM ---------------------------
-	if (position === 'custom' && rpbSettings.customSelector) {
-		const target = document.querySelector(rpbSettings.customSelector);
+	if (position === 'custom' && readninjaSettings.customSelector) {
+		const target = document.querySelector(readninjaSettings.customSelector);
 		if (target) {
 			// Position sticky dans l'élément cible
 			const stickyOverrides = 'position:sticky;top:0;bottom:';
@@ -88,7 +88,7 @@
 	}
 
 	// ---- RTL support ---------------------------------------------------------
-	var isRtl = rpbSettings.isRtl === 'true'
+	var isRtl = readninjaSettings.isRtl === 'true'
 		|| document.documentElement.dir === 'rtl'
 		|| document.body.classList.contains('rtl');
 
@@ -99,9 +99,9 @@
 	}
 
 	// ---- Sticky header offset -----------------------------------------------
-	function rpbGetStickyOffset() {
-		if (rpbSettings.autoSticky !== 'true') {
-			return parseInt(rpbSettings.stickyOffset, 10) || 0;
+	function readninjaGetStickyOffset() {
+		if (readninjaSettings.autoSticky !== 'true') {
+			return parseInt(readninjaSettings.stickyOffset, 10) || 0;
 		}
 		var offset = 0;
 		var elements = document.querySelectorAll('header, [class*="header"], nav, [class*="nav"]');
@@ -116,42 +116,42 @@
 		return offset;
 	}
 
-	function rpbApplyStickyOffset() {
+	function readninjaApplyStickyOffset() {
 		if (position === 'top') {
-			var off = rpbGetStickyOffset();
+			var off = readninjaGetStickyOffset();
 			bar.style.top = off + 'px';
 			if (track) { track.style.top = off + 'px'; }
-			if (indicator && (rpbSettings.indicatorPosition === 'left' || rpbSettings.indicatorPosition === 'right')) {
+			if (indicator && (readninjaSettings.indicatorPosition === 'left' || readninjaSettings.indicatorPosition === 'right')) {
 				indicator.style.top = off + 'px';
 			}
 		}
 	}
-	window.addEventListener('resize', rpbApplyStickyOffset, { passive: true });
+	window.addEventListener('resize', readninjaApplyStickyOffset, { passive: true });
 
 	// ---- Device display -----------------------------------------------------
-	function rpbCheckDevice() {
+	function readninjaCheckDevice() {
 		var isMobile = window.matchMedia(
-			'(max-width: ' + (parseInt(rpbSettings.mobileBreakpoint, 10) - 1) + 'px)'
+			'(max-width: ' + (parseInt(readninjaSettings.mobileBreakpoint, 10) - 1) + 'px)'
 		).matches;
-		var d = rpbSettings.deviceDisplay || 'all';
+		var d = readninjaSettings.deviceDisplay || 'all';
 		if (d === 'desktop_only' && isMobile) return false;
 		if (d === 'mobile_only' && !isMobile) return false;
 		if (d === 'hidden_mobile' && isMobile) return false;
 		return true;
 	}
 
-	var rpbDeviceVisible = rpbCheckDevice();
-	if (!rpbDeviceVisible) {
+	var readninjaDeviceVisible = readninjaCheckDevice();
+	if (!readninjaDeviceVisible) {
 		bar.style.display = 'none';
 		if (track) { track.style.display = 'none'; }
 	}
 
-	var rpbMQ = window.matchMedia(
-		'(max-width: ' + (parseInt(rpbSettings.mobileBreakpoint, 10) - 1) + 'px)'
+	var readninjaMQ = window.matchMedia(
+		'(max-width: ' + (parseInt(readninjaSettings.mobileBreakpoint, 10) - 1) + 'px)'
 	);
-	rpbMQ.addEventListener('change', function () {
-		rpbDeviceVisible = rpbCheckDevice();
-		if (!rpbDeviceVisible) {
+	readninjaMQ.addEventListener('change', function () {
+		readninjaDeviceVisible = readninjaCheckDevice();
+		if (!readninjaDeviceVisible) {
 			bar.style.display = 'none';
 			if (track) { track.style.display = 'none'; }
 		} else {
@@ -162,13 +162,13 @@
 	});
 
 	// ---- Indicateur de progression (badge flottant) -----------------------
-	const indicatorType = rpbSettings.indicatorType || 'none';
+	const indicatorType = readninjaSettings.indicatorType || 'none';
 	let indicator = null;
 
 	if (indicatorType !== 'none') {
 		// Force minimum height so the badge text is readable.
 		// If size is fixed and large, the bar must accommodate it.
-		var sizeSetting = rpbSettings.indicatorSize || 'auto';
+		var sizeSetting = readninjaSettings.indicatorSize || 'auto';
 		var fixedSize = sizeSetting === 'auto' ? 0 : (parseInt(sizeSetting, 10) || 0);
 		const minH = Math.max(14, fixedSize + 4);
 		const curH = parseInt(height, 10);
@@ -177,7 +177,7 @@
 			if (track) { track.style.height = minH + 'px'; }
 		}
 
-		var indPosition = rpbSettings.indicatorPosition || 'inside';
+		var indPosition = readninjaSettings.indicatorPosition || 'inside';
 		// Compute indicator font size: 'auto' = scaled to bar height, else fixed px
 		var effectiveBarH = Math.max(parseInt(bar.style.height, 10) || parseInt(height, 10), 14);
 		var indFontSize;
@@ -188,7 +188,7 @@
 		}
 
 		indicator = document.createElement('span');
-		indicator.id = 'rpb-indicator';
+		indicator.id = 'readninja-indicator';
 
 		var effectiveBarHpx = Math.max(parseInt(bar.style.height, 10) || parseInt(height, 10), 14);
 		var indStyles = [
@@ -227,10 +227,10 @@
 	}
 
 	// Apply sticky offset now that indicator exists (so its top can be set too)
-	rpbApplyStickyOffset();
+	readninjaApplyStickyOffset();
 
 	// Luminance helper — returns 0..1
-	function rpbLuminance(hex) {
+	function readninjaLuminance(hex) {
 		if (!hex || hex.charAt(0) !== '#') { return 0; }
 		hex = hex.replace('#', '');
 		if (hex.length === 3) { hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2]; }
@@ -241,11 +241,11 @@
 	}
 
 	// Fixed or auto indicator color
-	const fixedIndicatorColor = (rpbSettings.indicatorColor && rpbSettings.indicatorColor !== 'auto')
-		? rpbSettings.indicatorColor : null;
+	const fixedIndicatorColor = (readninjaSettings.indicatorColor && readninjaSettings.indicatorColor !== 'auto')
+		? readninjaSettings.indicatorColor : null;
 
 	// Decide indicator text color based on what's behind it
-	function rpbIndicatorColor(progress) {
+	function readninjaIndicatorColor(progress) {
 		if (fixedIndicatorColor) { return fixedIndicatorColor; }
 
 		// Auto mode: adapt to what's behind the indicator.
@@ -256,13 +256,13 @@
 		var bgHex;
 		if (onFill) {
 			if (grad) {
-				var l1 = rpbLuminance(grad.colorStart);
-				var l2 = rpbLuminance(grad.colorEnd);
+				var l1 = readninjaLuminance(grad.colorStart);
+				var l2 = readninjaLuminance(grad.colorEnd);
 				return ((l1 + l2) / 2) > 0.6 ? '#000' : '#fff';
 			}
 			bgHex = color;
 		} else {
-			bgHex = rpbSettings.backgroundColor || '';
+			bgHex = readninjaSettings.backgroundColor || '';
 			if (!bgHex) {
 				var bodyBg = window.getComputedStyle(document.body).backgroundColor;
 				var m = bodyBg.match(/\d+/g);
@@ -273,12 +273,12 @@
 				return '#000';
 			}
 		}
-		return rpbLuminance(bgHex) > 0.6 ? '#000' : '#fff';
+		return readninjaLuminance(bgHex) > 0.6 ? '#000' : '#fff';
 	}
 
 	// ---- Logique de progression -------------------------------------------
 	const MIN_SCROLLABLE = 100;
-	const progressSource = rpbSettings.progressSource || 'content';
+	const progressSource = readninjaSettings.progressSource || 'content';
 
 	// Find the content element for content-based progress
 	let contentEl = null;
@@ -302,17 +302,17 @@
 	};
 
 	// Sequential mode — only active when the Pro plugin injects these keys.
-	const seq = rpbSettings.sequential ? {
-		blockSize: Math.max(1, parseInt(rpbSettings.blockSize, 10) || 10),
-		animated:  !!rpbSettings.animated,
-		duration:  parseInt(rpbSettings.duration, 10) || 200,
+	const seq = readninjaSettings.sequential ? {
+		blockSize: Math.max(1, parseInt(readninjaSettings.blockSize, 10) || 10),
+		animated:  !!readninjaSettings.animated,
+		duration:  parseInt(readninjaSettings.duration, 10) || 200,
 	} : null;
 
 	let readyForTransition = false;
 	let ticking = false;
 
 	const update = () => {
-		if (!rpbDeviceVisible) return;
+		if (!readninjaDeviceVisible) return;
 
 		const raw = getProgress();
 		const hidden = raw < 0;
@@ -338,24 +338,24 @@
 					indicator.style.opacity = '0';
 				} else {
 					indicator.style.opacity = '1';
-					var indClr = rpbIndicatorColor(raw);
+					var indClr = readninjaIndicatorColor(raw);
 					indicator.style.color = indClr;
-					indicator.style.textShadow = rpbLuminance(indClr) > 0.5
+					indicator.style.textShadow = readninjaLuminance(indClr) > 0.5
 						? '0 1px 2px rgba(0,0,0,0.4)'
 						: '0 1px 2px rgba(255,255,255,0.4)';
 					var pct = Math.round(raw) + '%';
 					if (indicatorType === 'percent') {
 						indicator.textContent = pct;
 					} else if (indicatorType === 'time' || indicatorType === 'both') {
-						var wc = parseInt(rpbSettings.wordCount, 10) || 0;
-						var wpm = parseInt(rpbSettings.wpm, 10) || 200;
-						var prefix = (rpbSettings.timePrefix || '').trim();
-						var suffix = (rpbSettings.timeSuffix || 'min restantes').trim();
+						var wc = parseInt(readninjaSettings.wordCount, 10) || 0;
+						var wpm = parseInt(readninjaSettings.wpm, 10) || 200;
+						var prefix = (readninjaSettings.timePrefix || '').trim();
+						var suffix = (readninjaSettings.timeSuffix || 'min restantes').trim();
 						var totalSecondsLeft = (wc * (1 - raw / 100) / wpm) * 60;
 						var core;
 						if (totalSecondsLeft < 60) {
 							core = '< 1';
-						} else if (rpbSettings.timeFormat === 'minutes_seconds') {
+						} else if (readninjaSettings.timeFormat === 'minutes_seconds') {
 							var m = Math.floor(totalSecondsLeft / 60);
 							var s = Math.floor(totalSecondsLeft % 60);
 							core = m + ':' + (s < 10 ? '0' : '') + s;

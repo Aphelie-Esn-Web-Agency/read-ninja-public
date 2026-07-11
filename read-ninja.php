@@ -18,49 +18,49 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RPB_VERSION', '1.1.0' );
-define( 'RPB_PATH', plugin_dir_path( __FILE__ ) );
-define( 'RPB_URL', plugin_dir_url( __FILE__ ) );
-define( 'RPB_BASENAME', plugin_basename( __FILE__ ) );
+define( 'READNINJA_VERSION', '1.1.0' );
+define( 'READNINJA_PATH', plugin_dir_path( __FILE__ ) );
+define( 'READNINJA_URL', plugin_dir_url( __FILE__ ) );
+define( 'READNINJA_BASENAME', plugin_basename( __FILE__ ) );
 
-if ( ! defined( 'RPB_PRO_URL' ) ) {
-	define( 'RPB_PRO_URL', 'https://read-ninja.com/pro' );
+if ( ! defined( 'READNINJA_PRO_URL' ) ) {
+	define( 'READNINJA_PRO_URL', 'https://read-ninja.com/pro' );
 }
 
 /**
  * Whether the Pro version is active.
  *
  * The free plugin always returns false. A separate Pro plugin (distributed
- * outside WordPress.org) can hook into the `rpb_is_pro` filter to flip this
- * to true once its own license check passes. The `RPB_DEV_PRO` constant is
+ * outside WordPress.org) can hook into the `readninja_is_pro` filter to flip this
+ * to true once its own license check passes. The `READNINJA_DEV_PRO` constant is
  * a developer-only override useful for local testing.
  */
-function rpb_is_pro(): bool {
-	if ( defined( 'RPB_DEV_PRO' ) && RPB_DEV_PRO ) {
+function readninja_is_pro(): bool {
+	if ( defined( 'READNINJA_DEV_PRO' ) && READNINJA_DEV_PRO ) {
 		return true;
 	}
-	return (bool) apply_filters( 'rpb_is_pro', false );
+	return (bool) apply_filters( 'readninja_is_pro', false );
 }
 
 // --- Core classes ------------------------------------------------------------
-require_once RPB_PATH . 'includes/class-settings.php';
-require_once RPB_PATH . 'includes/class-post-meta.php';
-require_once RPB_PATH . 'includes/class-enqueue.php';
+require_once READNINJA_PATH . 'includes/class-settings.php';
+require_once READNINJA_PATH . 'includes/class-post-meta.php';
+require_once READNINJA_PATH . 'includes/class-enqueue.php';
 
-( new RPB_Settings() )->init();
-( new RPB_Post_Meta() )->init();
-( new RPB_Enqueue() )->init();
+( new READNINJA_Settings() )->init();
+( new READNINJA_Post_Meta() )->init();
+( new READNINJA_Enqueue() )->init();
 
 // --- Pro upsell (admin only, hidden when Pro is active) ----------------------
-if ( is_admin() && ! rpb_is_pro() ) {
-	require_once RPB_PATH . 'includes/class-rpb-upgrade.php';
-	( new RPB_Upgrade() )->init();
+if ( is_admin() && ! readninja_is_pro() ) {
+	require_once READNINJA_PATH . 'includes/class-readninja-upgrade.php';
+	( new READNINJA_Upgrade() )->init();
 }
 
 // --- Lifecycle hooks ---------------------------------------------------------
 register_activation_hook( __FILE__, function () {
-	if ( ! get_option( 'rpb_activated_at' ) ) {
-		update_option( 'rpb_activated_at', time() );
+	if ( ! get_option( 'readninja_activated_at' ) ) {
+		update_option( 'readninja_activated_at', time() );
 	}
 } );
 register_deactivation_hook( __FILE__, function () {} );

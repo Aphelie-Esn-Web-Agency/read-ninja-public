@@ -4,22 +4,22 @@ import { SelectControl, ToggleControl, RangeControl, PanelRow, TextControl, __ex
 import { useSelect, useDispatch }                                                   from '@wordpress/data';
 import { __ }                                                                       from '@wordpress/i18n';
 
-const META_KEY              = '_rpb_display_override';
-const COLOR_KEY             = '_rpb_color_override';
-const COLOR_TYPE_KEY        = '_rpb_color_type';
-const GRAD_START_KEY        = '_rpb_gradient_color_start';
-const GRAD_END_KEY          = '_rpb_gradient_color_end';
-const HEIGHT_KEY            = '_rpb_height_override';
-const DISABLE_THRESHOLD_KEY = '_rpb_disable_threshold';
-const BG_COLOR_KEY          = '_rpb_background_color';
-const POSITION_KEY          = '_rpb_position_override';
-const CUSTOM_SEL_KEY        = '_rpb_custom_selector';
+const META_KEY              = '_readninja_display_override';
+const COLOR_KEY             = '_readninja_color_override';
+const COLOR_TYPE_KEY        = '_readninja_color_type';
+const GRAD_START_KEY        = '_readninja_gradient_color_start';
+const GRAD_END_KEY          = '_readninja_gradient_color_end';
+const HEIGHT_KEY            = '_readninja_height_override';
+const DISABLE_THRESHOLD_KEY = '_readninja_disable_threshold';
+const BG_COLOR_KEY          = '_readninja_background_color';
+const POSITION_KEY          = '_readninja_position_override';
+const CUSTOM_SEL_KEY        = '_readninja_custom_selector';
 
 const PICKER_STYLE = { width: '40px', height: '30px', border: 'none', cursor: 'pointer', padding: '0' };
 const RESET_STYLE  = { fontSize: '11px', color: '#757575', background: 'none', border: 'none', cursor: 'pointer', padding: '0', textDecoration: 'underline' };
 const LABEL_STYLE  = { fontSize: '11px', color: '#1e1e1e' };
 
-const RPBPanel = () => {
+const ReadNinjaPanel = () => {
 	const postType = useSelect( s => s( 'core/editor' ).getCurrentPostType(), [] );
 	const postId   = useSelect( s => s( 'core/editor' ).getCurrentPostId(), [] );
 
@@ -66,7 +66,7 @@ const RPBPanel = () => {
 
 	return (
 		<PluginDocumentSettingPanel
-			name="rpb-display-override"
+			name="readninja-display-override"
 			title={ __( 'Read Ninja - Reading Progress Bar', 'read-ninja' ) }
 		>
 			<SelectControl
@@ -83,11 +83,11 @@ const RPBPanel = () => {
 
 			{ /* ---- Fond de la barre (gratuit) ---- */ }
 			<PanelRow>
-				<label htmlFor="rpb-bg-color" style={ LABEL_STYLE }>
+				<label htmlFor="readninja-bg-color" style={ LABEL_STYLE }>
 					{ __( 'Fond de la barre', 'read-ninja' ) }
 				</label>
 				<input
-					id="rpb-bg-color"
+					id="readninja-bg-color"
 					type="color"
 					value={ bgColorValue || '#ffffff' }
 					onChange={ e => onBgColorChange( e.target.value ) }
@@ -129,7 +129,7 @@ const RPBPanel = () => {
 				/>
 			) }
 
-			{ window.rpbSettings?.isPro && (
+			{ window.readninjaSettings?.isPro && (
 				<>
 					<Divider />
 
@@ -150,11 +150,11 @@ const RPBPanel = () => {
 					{ colorType === 'solid' && (
 						<>
 							<PanelRow>
-								<label htmlFor="rpb-color-override" style={ LABEL_STYLE }>
+								<label htmlFor="readninja-color-override" style={ LABEL_STYLE }>
 									{ __( 'Couleur', 'read-ninja' ) }
 								</label>
 								<input
-									id="rpb-color-override"
+									id="readninja-color-override"
 									type="color"
 									value={ colorValue || '#1D9E75' }
 									onChange={ e => onColorChange( e.target.value ) }
@@ -175,11 +175,11 @@ const RPBPanel = () => {
 					{ colorType === 'gradient' && (
 						<>
 							<PanelRow>
-								<label htmlFor="rpb-grad-start" style={ LABEL_STYLE }>
+								<label htmlFor="readninja-grad-start" style={ LABEL_STYLE }>
 									{ __( 'Couleur de départ', 'read-ninja' ) }
 								</label>
 								<input
-									id="rpb-grad-start"
+									id="readninja-grad-start"
 									type="color"
 									value={ gradStartValue || '#3b82f6' }
 									onChange={ e => onGradStartChange( e.target.value ) }
@@ -187,11 +187,11 @@ const RPBPanel = () => {
 								/>
 							</PanelRow>
 							<PanelRow>
-								<label htmlFor="rpb-grad-end" style={ LABEL_STYLE }>
+								<label htmlFor="readninja-grad-end" style={ LABEL_STYLE }>
 									{ __( 'Couleur de fin', 'read-ninja' ) }
 								</label>
 								<input
-									id="rpb-grad-end"
+									id="readninja-grad-end"
 									type="color"
 									value={ gradEndValue || '#8b5cf6' }
 									onChange={ e => onGradEndChange( e.target.value ) }
@@ -246,4 +246,4 @@ const RPBPanel = () => {
 	);
 };
 
-registerPlugin( 'rpb-display-override', { render: RPBPanel } );
+registerPlugin( 'readninja-display-override', { render: ReadNinjaPanel } );

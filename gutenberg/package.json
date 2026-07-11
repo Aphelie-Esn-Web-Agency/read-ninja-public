@@ -1,5 +1,5 @@
 {
-  "name": "rpb-gutenberg",
+  "name": "readninja-gutenberg",
   "private": true,
   "scripts": {
     "build": "wp-scripts build src/index.js --output-path=build",

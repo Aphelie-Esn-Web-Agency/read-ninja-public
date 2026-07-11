@@ -3,14 +3,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class RPB_Enqueue {
+class READNINJA_Enqueue {
 
 	public function init(): void {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue' ] );
 	}
 
 	public function enqueue(): void {
-		$opts    = ( new RPB_Settings() )->get_options();
+		$opts    = ( new READNINJA_Settings() )->get_options();
 		$post_id = is_singular() ? get_the_ID() : 0;
 
 		// --- Décision d'affichage ------------------------------------------------
@@ -22,7 +22,7 @@ class RPB_Enqueue {
 		 * @param bool $display  Décision courante (free logic).
 		 * @param int  $post_id  ID du post courant, 0 si non-singulier.
 		 */
-		$display = (bool) apply_filters( 'rpb_should_display', $display, $post_id );
+		$display = (bool) apply_filters( 'readninja_should_display', $display, $post_id );
 
 		if ( ! $display ) {
 			return;
@@ -30,10 +30,10 @@ class RPB_Enqueue {
 
 		// --- CSS -----------------------------------------------------------------
 		wp_enqueue_style(
-			'rpb-progress-bar',
-			RPB_URL . 'assets/css/progress-bar.css',
+			'readninja-progress-bar',
+			READNINJA_URL . 'assets/css/progress-bar.css',
 			[],
-			RPB_VERSION
+			READNINJA_VERSION
 		);
 
 		// --- Config de la barre --------------------------------------------------
@@ -57,16 +57,16 @@ class RPB_Enqueue {
 
 		// Overrides par article (plugin gratuit)
 		if ( $post_id ) {
-			$bg = get_post_meta( $post_id, '_rpb_background_color', true );
+			$bg = get_post_meta( $post_id, '_readninja_background_color', true );
 			if ( $bg !== '' ) {
 				$config['backgroundColor'] = $bg;
 			}
 
-			$pos_override = get_post_meta( $post_id, '_rpb_position_override', true );
+			$pos_override = get_post_meta( $post_id, '_readninja_position_override', true );
 			if ( $pos_override !== '' ) {
 				$config['position'] = $pos_override;
 				if ( $pos_override === 'custom' ) {
-					$sel = get_post_meta( $post_id, '_rpb_custom_selector', true );
+					$sel = get_post_meta( $post_id, '_readninja_custom_selector', true );
 					$config['customSelector'] = $sel ?: '';
 				} else {
 					unset( $config['customSelector'] );
@@ -80,14 +80,14 @@ class RPB_Enqueue {
 		 *
 		 * @param array $config  Tableau de configuration.
 		 */
-		$config = (array) apply_filters( 'rpb_bar_config', $config );
+		$config = (array) apply_filters( 'readninja_bar_config', $config );
 
 		// --- Barre JS principale -------------------------------------------------
 		wp_enqueue_script(
-			'rpb-progress-bar',
-			RPB_URL . 'assets/js/progress-bar.js',
+			'readninja-progress-bar',
+			READNINJA_URL . 'assets/js/progress-bar.js',
 			[],
-			RPB_VERSION,
+			READNINJA_VERSION,
 			[ 'strategy' => 'defer', 'in_footer' => true ]
 		);
 
@@ -125,7 +125,7 @@ class RPB_Enqueue {
 			}
 		}
 
-		wp_localize_script( 'rpb-progress-bar', 'rpbSettings', $config );
+		wp_localize_script( 'readninja-progress-bar', 'readninjaSettings', $config );
 
 		/**
 		 * Action déclenchée après l'enqueue de la barre.
@@ -133,7 +133,7 @@ class RPB_Enqueue {
 		 *
 		 * @param int $post_id  ID du post courant, 0 si non-singulier.
 		 */
-		do_action( 'rpb_after_bar_render', $post_id );
+		do_action( 'readninja_after_bar_render', $post_id );
 	}
 
 	/**
@@ -142,7 +142,7 @@ class RPB_Enqueue {
 	private function should_display_base( array $opts ): bool {
 		// Override par article (prioritaire sur tout le reste)
 		if ( is_singular() ) {
-			$override = get_post_meta( get_the_ID(), RPB_Post_Meta::META_KEY, true );
+			$override = get_post_meta( get_the_ID(), READNINJA_Post_Meta::META_KEY, true );
 			if ( $override === 'show' ) return true;
 			if ( $override === 'hide' ) return false;
 		}

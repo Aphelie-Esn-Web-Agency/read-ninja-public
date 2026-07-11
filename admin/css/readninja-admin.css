@@ -3,35 +3,35 @@
    ========================================================================== */
 
 :root {
-    --rpb-brand:          var(--wp-admin-theme-color, #2271b1);
-    --rpb-card-bg:        #fff;
-    --rpb-card-border:    #e0e0e0;
-    --rpb-card-radius:    8px;
-    --rpb-text:           #1e1e1e;
-    --rpb-text-muted:     #6b7280;
-    --rpb-input-border:   #8c8f94;
-    --rpb-row-divider:    #f0f0f1;
+    --readninja-brand:          var(--wp-admin-theme-color, #2271b1);
+    --readninja-card-bg:        #fff;
+    --readninja-card-border:    #e0e0e0;
+    --readninja-card-radius:    8px;
+    --readninja-text:           #1e1e1e;
+    --readninja-text-muted:     #6b7280;
+    --readninja-input-border:   #8c8f94;
+    --readninja-row-divider:    #f0f0f1;
 }
 
 /* ---- Page wrapper -------------------------------------------------------- */
-.rpb-admin-page {
+.readninja-admin-page {
     max-width: 920px;
 }
 
 /* ---- Page header --------------------------------------------------------- */
-.rpb-page-header {
+.readninja-page-header {
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 20px 0 20px;
     margin-bottom: 0;
-    border-bottom: 1px solid var(--rpb-card-border);
+    border-bottom: 1px solid var(--readninja-card-border);
 }
 
-.rpb-page-header__icon {
+.readninja-page-header__icon {
     width: 48px;
     height: 48px;
-    background: var(--rpb-brand);
+    background: var(--readninja-brand);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@
     flex-shrink: 0;
 }
 
-.rpb-page-header__icon .dashicons {
+.readninja-page-header__icon .dashicons {
     color: #fff;
     font-size: 26px;
     width: 26px;
@@ -47,27 +47,27 @@
     line-height: 1;
 }
 
-.rpb-page-header__info {
+.readninja-page-header__info {
     flex: 1;
     min-width: 0;
 }
 
-.rpb-page-header__title {
+.readninja-page-header__title {
     font-size: 20px;
     font-weight: 600;
-    color: var(--rpb-text);
+    color: var(--readninja-text);
     margin: 0 0 5px;
     line-height: 1.2;
 }
 
-.rpb-page-header__badges {
+.readninja-page-header__badges {
     display: flex;
     align-items: center;
     gap: 6px;
     flex-wrap: wrap;
 }
 
-.rpb-badge {
+.readninja-badge {
     display: inline-flex;
     align-items: center;
     gap: 3px;
@@ -78,47 +78,47 @@
     line-height: 1.7;
 }
 
-.rpb-badge--version {
+.readninja-badge--version {
     background: #f1f5f9;
-    color: var(--rpb-text-muted);
+    color: var(--readninja-text-muted);
     border: 1px solid #e2e8f0;
 }
 
-.rpb-badge--pro {
+.readninja-badge--pro {
     background: #d1fae5;
     color: #065f46;
     border: 1px solid #6ee7b7;
 }
 
-.rpb-badge--free {
+.readninja-badge--free {
     background: #f3f4f6;
     color: #6b7280;
     border: 1px solid #e5e7eb;
 }
 
 /* ---- Nav tabs ------------------------------------------------------------ */
-.rpb-admin-page .nav-tab-wrapper {
-    border-bottom: 1px solid var(--rpb-card-border);
+.readninja-admin-page .nav-tab-wrapper {
+    border-bottom: 1px solid var(--readninja-card-border);
     margin-top: 20px;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
 /* Suppress WP h1 margin that pushes the tab bar */
-.rpb-admin-page > h1 {
+.readninja-admin-page > h1 {
     display: none;
 }
 
-.rpb-admin-page .nav-tab {
+.readninja-admin-page .nav-tab {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
     font-size: 13px;
     font-weight: 500;
-    color: var(--rpb-text);
+    color: var(--readninja-text);
     background: #f6f7f7;
-    border: 1px solid var(--rpb-card-border);
+    border: 1px solid var(--readninja-card-border);
     border-bottom: none;
     border-radius: 4px 4px 0 0;
     text-decoration: none;
@@ -129,32 +129,32 @@
     line-height: 1.4;
 }
 
-.rpb-admin-page .nav-tab:hover {
+.readninja-admin-page .nav-tab:hover {
     background: #eef3fb;
-    color: var(--rpb-brand);
+    color: var(--readninja-brand);
 }
 
-.rpb-admin-page .nav-tab-active,
-.rpb-admin-page .nav-tab-active:hover {
-    background: var(--rpb-brand);
+.readninja-admin-page .nav-tab-active,
+.readninja-admin-page .nav-tab-active:hover {
+    background: var(--readninja-brand);
     color: #fff;
-    border-color: var(--rpb-brand);
+    border-color: var(--readninja-brand);
 }
 
-.rpb-admin-page .nav-tab .dashicons {
+.readninja-admin-page .nav-tab .dashicons {
     font-size: 15px;
     width: 15px;
     height: 15px;
     line-height: 1;
 }
 
-.rpb-admin-page .nav-tab-active .dashicons,
-.rpb-admin-page .nav-tab-active:hover .dashicons {
+.readninja-admin-page .nav-tab-active .dashicons,
+.readninja-admin-page .nav-tab-active:hover .dashicons {
     color: #fff;
 }
 
 /* ---- Settings layout : preview pleine largeur + form en dessous ---------- */
-.rpb-settings-layout {
+.readninja-settings-layout {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -162,20 +162,20 @@
 }
 
 /* Preview occupe toute la largeur */
-.rpb-preview-sidebar {
+.readninja-preview-sidebar {
     width: 100%;
 }
 
 /* Card du preview : titre + bande de simulation */
-.rpb-preview-sidebar__card {
-    background: var(--rpb-card-bg);
-    border: 1px solid var(--rpb-card-border);
-    border-radius: var(--rpb-card-radius) var(--rpb-card-radius) 0 0;
+.readninja-preview-sidebar__card {
+    background: var(--readninja-card-bg);
+    border: 1px solid var(--readninja-card-border);
+    border-radius: var(--readninja-card-radius) var(--readninja-card-radius) 0 0;
     border-bottom: none;
     overflow: hidden;
 }
 
-.rpb-preview-sidebar__title {
+.readninja-preview-sidebar__title {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -183,12 +183,12 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--rpb-text-muted);
+    color: var(--readninja-text-muted);
     padding: 8px 20px;
-    border-bottom: 1px solid var(--rpb-row-divider);
+    border-bottom: 1px solid var(--readninja-row-divider);
 }
 
-.rpb-preview-sidebar__title .dashicons {
+.readninja-preview-sidebar__title .dashicons {
     font-size: 13px;
     width: 13px;
     height: 13px;
@@ -196,7 +196,7 @@
 
 /* Override des styles inline injectés par settings-preview.js :
    hauteur 40px, bords arrondis supprimés (la card gère ça), pas de margin */
-#rpb-preview {
+#readninja-preview {
     height: 140px !important;
     border-radius: 0 !important;
     margin: 0 !important;
@@ -206,109 +206,109 @@
 }
 
 /* Le placeholder remplit la card sans interférer */
-#rpb-preview-placeholder {
+#readninja-preview-placeholder {
     display: block;
     line-height: 0;
     padding: 14px;
 }
 
 /* Masquer le texte d'aide (sans objet en pleine largeur) */
-.rpb-preview-sidebar__hint {
+.readninja-preview-sidebar__hint {
     display: none;
 }
 
 /* Main content : connexion visuelle avec la card preview ci-dessus */
-.rpb-settings-main {
+.readninja-settings-main {
     flex: 1;
     min-width: 0;
 }
 
 /* Le premier h2 du form est séparé de la card preview */
-.rpb-settings-main .rpb-settings-form h2:first-of-type {
+.readninja-settings-main .readninja-settings-form h2:first-of-type {
     margin-top: 16px;
     border-top: none;
     border-radius: 0 0 0 0;
 }
 
 /* Fermer proprement la card preview en bas (bottom-radius sur dernier enfant du preview card) */
-.rpb-preview-sidebar__card + .rpb-settings-main .rpb-settings-form h2:first-of-type {
+.readninja-preview-sidebar__card + .readninja-settings-main .readninja-settings-form h2:first-of-type {
     border-radius: 0;
 }
 
 /* ---- Settings form ------------------------------------------------------- */
-.rpb-settings-form {
+.readninja-settings-form {
     margin-top: 0;
 }
 
 /* Card: h2 = header, adjacent form-table = body */
-.rpb-settings-form h2 {
+.readninja-settings-form h2 {
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--rpb-text);
-    background: var(--rpb-card-bg);
-    border: 1px solid var(--rpb-card-border);
-    border-bottom: 1px solid var(--rpb-row-divider);
-    border-left: 4px solid var(--rpb-brand);
-    border-radius: var(--rpb-card-radius) var(--rpb-card-radius) 0 0;
+    color: var(--readninja-text);
+    background: var(--readninja-card-bg);
+    border: 1px solid var(--readninja-card-border);
+    border-bottom: 1px solid var(--readninja-row-divider);
+    border-left: 4px solid var(--readninja-brand);
+    border-radius: var(--readninja-card-radius) var(--readninja-card-radius) 0 0;
     padding: 13px 18px;
     margin: 20px 0 0;
     margin-bottom: 0;
 }
 
-.rpb-settings-form h2 + table.form-table {
-    background: var(--rpb-card-bg);
-    border: 1px solid var(--rpb-card-border);
+.readninja-settings-form h2 + table.form-table {
+    background: var(--readninja-card-bg);
+    border: 1px solid var(--readninja-card-border);
     border-top: none;
-    border-radius: 0 0 var(--rpb-card-radius) var(--rpb-card-radius);
+    border-radius: 0 0 var(--readninja-card-radius) var(--readninja-card-radius);
     margin-top: 0;
     margin-bottom: 0;
     padding: 0 20px 4px;
 }
 
 /* Standalone form-table (no preceding h2 — shouldn't occur normally) */
-.rpb-settings-form > table.form-table:first-of-type {
-    background: var(--rpb-card-bg);
-    border: 1px solid var(--rpb-card-border);
-    border-radius: var(--rpb-card-radius);
+.readninja-settings-form > table.form-table:first-of-type {
+    background: var(--readninja-card-bg);
+    border: 1px solid var(--readninja-card-border);
+    border-radius: var(--readninja-card-radius);
     margin-top: 0;
     padding: 0 20px 4px;
 }
 
-.rpb-settings-form table.form-table {
+.readninja-settings-form table.form-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 0;
 }
 
-.rpb-settings-form table.form-table th {
+.readninja-settings-form table.form-table th {
     width: 200px;
     padding: 14px 16px 14px 14px;
     font-size: 13px;
     font-weight: 500;
-    color: var(--rpb-text);
+    color: var(--readninja-text);
     vertical-align: middle;
 }
 
-.rpb-settings-form table.form-table td {
+.readninja-settings-form table.form-table td {
     padding: 14px 0;
     vertical-align: middle;
 }
 
-.rpb-settings-form table.form-table tr {
-    border-bottom: 1px solid var(--rpb-row-divider);
+.readninja-settings-form table.form-table tr {
+    border-bottom: 1px solid var(--readninja-row-divider);
 }
 
-.rpb-settings-form table.form-table tr:last-child {
+.readninja-settings-form table.form-table tr:last-child {
     border-bottom: none;
 }
 
 /* ---- Inputs / selects ---------------------------------------------------- */
-.rpb-settings-form input[type="text"],
-.rpb-settings-form input[type="number"],
-.rpb-settings-form select {
-    border: 1px solid var(--rpb-input-border);
+.readninja-settings-form input[type="text"],
+.readninja-settings-form input[type="number"],
+.readninja-settings-form select {
+    border: 1px solid var(--readninja-input-border);
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 13px;
@@ -317,62 +317,62 @@
     background: #fff;
 }
 
-.rpb-settings-form input[type="text"]:focus,
-.rpb-settings-form input[type="number"]:focus,
-.rpb-settings-form select:focus {
-    border-color: var(--rpb-brand);
-    box-shadow: 0 0 0 1px var(--rpb-brand);
+.readninja-settings-form input[type="text"]:focus,
+.readninja-settings-form input[type="number"]:focus,
+.readninja-settings-form select:focus {
+    border-color: var(--readninja-brand);
+    box-shadow: 0 0 0 1px var(--readninja-brand);
     outline: none;
 }
 
 /* ---- Color input --------------------------------------------------------- */
-.rpb-settings-form input[type="color"] {
+.readninja-settings-form input[type="color"] {
     width: 44px;
     height: 36px;
     padding: 2px;
-    border: 1px solid var(--rpb-input-border);
+    border: 1px solid var(--readninja-input-border);
     border-radius: 4px;
     cursor: pointer;
     vertical-align: middle;
     background: #fff;
 }
 
-.rpb-settings-form input[type="color"]:focus {
-    outline: 2px solid var(--rpb-brand);
+.readninja-settings-form input[type="color"]:focus {
+    outline: 2px solid var(--readninja-brand);
     outline-offset: 1px;
 }
 
 /* ---- Range slider -------------------------------------------------------- */
-.rpb-settings-form input[type="range"] {
+.readninja-settings-form input[type="range"] {
     vertical-align: middle;
-    accent-color: var(--rpb-brand);
+    accent-color: var(--readninja-brand);
     width: 180px;
     cursor: pointer;
 }
 
-.rpb-settings-form output {
+.readninja-settings-form output {
     display: inline-block;
     min-width: 28px;
     text-align: center;
     font-weight: 600;
     font-size: 13px;
-    color: var(--rpb-brand);
+    color: var(--readninja-brand);
     vertical-align: middle;
     margin-left: 4px;
 }
 
 /* ---- CSS Toggle switch --------------------------------------------------- */
-.rpb-toggle {
+.readninja-toggle {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
     user-select: none;
     font-size: 13px;
-    color: var(--rpb-text);
+    color: var(--readninja-text);
 }
 
-.rpb-toggle input[type="checkbox"] {
+.readninja-toggle input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -380,7 +380,7 @@
     pointer-events: none;
 }
 
-.rpb-toggle-track {
+.readninja-toggle-track {
     position: relative;
     width: 40px;
     height: 22px;
@@ -390,7 +390,7 @@
     flex-shrink: 0;
 }
 
-.rpb-toggle-track::after {
+.readninja-toggle-track::after {
     content: '';
     position: absolute;
     top: 3px;
@@ -403,26 +403,26 @@
     transition: transform 0.2s;
 }
 
-.rpb-toggle input:checked + .rpb-toggle-track {
-    background: var(--rpb-brand);
+.readninja-toggle input:checked + .readninja-toggle-track {
+    background: var(--readninja-brand);
 }
 
-.rpb-toggle input:checked + .rpb-toggle-track::after {
+.readninja-toggle input:checked + .readninja-toggle-track::after {
     transform: translateX(18px);
 }
 
-.rpb-toggle input:focus-visible + .rpb-toggle-track {
-    outline: 2px solid var(--rpb-brand);
+.readninja-toggle input:focus-visible + .readninja-toggle-track {
+    outline: 2px solid var(--readninja-brand);
     outline-offset: 2px;
 }
 
 /* ---- Submit button ------------------------------------------------------- */
-.rpb-settings-form p.submit {
+.readninja-settings-form p.submit {
     padding: 16px 0 8px;
     margin: 16px 0 0;
 }
 
-.rpb-settings-form #submit {
+.readninja-settings-form #submit {
     padding-left: 40px;
     padding-right: 40px;
     border-radius: 4px;
@@ -431,29 +431,29 @@
     transition: background 0.2s, border-color 0.2s;
 }
 
-.rpb-save-success#submit {
+.readninja-save-success#submit {
     background: #16a34a !important;
     border-color: #15803d !important;
     color: #fff !important;
 }
 
 /* ---- Upsell card --------------------------------------------------------- */
-.rpb-upsell {
+.readninja-upsell {
     background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
-    border: 1px solid var(--rpb-card-border);
-    border-radius: var(--rpb-card-radius);
+    border: 1px solid var(--readninja-card-border);
+    border-radius: var(--readninja-card-radius);
     padding: 24px 28px;
     margin-top: 24px;
 }
 
-.rpb-upsell__header {
+.readninja-upsell__header {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
 }
 
-.rpb-upsell__header .dashicons {
+.readninja-upsell__header .dashicons {
     font-size: 24px;
     width: 24px;
     height: 24px;
@@ -461,14 +461,14 @@
     flex-shrink: 0;
 }
 
-.rpb-upsell__title {
+.readninja-upsell__title {
     font-size: 16px;
     font-weight: 600;
-    color: var(--rpb-text);
+    color: var(--readninja-text);
     margin: 0;
 }
 
-.rpb-upsell__list {
+.readninja-upsell__list {
     list-style: none;
     margin: 0 0 22px;
     padding: 0;
@@ -477,16 +477,16 @@
     gap: 8px 24px;
 }
 
-.rpb-upsell__list li {
+.readninja-upsell__list li {
     display: flex;
     align-items: flex-start;
     gap: 6px;
     font-size: 13px;
-    color: var(--rpb-text-muted);
+    color: var(--readninja-text-muted);
     line-height: 1.5;
 }
 
-.rpb-upsell__list li .dashicons {
+.readninja-upsell__list li .dashicons {
     color: #16a34a;
     font-size: 16px;
     width: 16px;
@@ -495,14 +495,14 @@
     margin-top: 2px;
 }
 
-.rpb-upsell__actions {
+.readninja-upsell__actions {
     display: flex;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
 }
 
-.rpb-upsell__cta.button-primary {
+.readninja-upsell__cta.button-primary {
     padding: 7px 28px;
     border-radius: 4px;
     font-size: 14px;
@@ -510,37 +510,37 @@
     text-decoration: none;
 }
 
-.rpb-upsell__secondary {
+.readninja-upsell__secondary {
     font-size: 13px;
-    color: var(--rpb-text-muted);
+    color: var(--readninja-text-muted);
     text-decoration: none;
 }
 
-.rpb-upsell__secondary:hover {
-    color: var(--rpb-brand);
+.readninja-upsell__secondary:hover {
+    color: var(--readninja-brand);
     text-decoration: underline;
 }
 
 /* ---- Analytics metric cards ---------------------------------------------- */
-.rpb-metric-cards {
+.readninja-metric-cards {
     display: flex;
     gap: 16px;
     margin-bottom: 24px;
     flex-wrap: wrap;
 }
 
-.rpb-metric-card {
+.readninja-metric-card {
     flex: 1;
     min-width: 160px;
-    background: var(--rpb-card-bg);
-    border: 1px solid var(--rpb-card-border);
-    border-radius: var(--rpb-card-radius);
+    background: var(--readninja-card-bg);
+    border: 1px solid var(--readninja-card-border);
+    border-radius: var(--readninja-card-radius);
     padding: 16px;
     position: relative;
     overflow: hidden;
 }
 
-.rpb-metric-card__icon {
+.readninja-metric-card__icon {
     position: absolute;
     top: 14px;
     right: 14px;
@@ -550,123 +550,123 @@
     height: 22px;
 }
 
-.rpb-metric-card__value {
+.readninja-metric-card__value {
     font-size: 28px;
     font-weight: 600;
-    color: var(--rpb-brand);
+    color: var(--readninja-brand);
     line-height: 1.1;
     margin-bottom: 4px;
 }
 
-.rpb-metric-card__label {
+.readninja-metric-card__label {
     font-size: 12px;
-    color: var(--rpb-text-muted);
+    color: var(--readninja-text-muted);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
 /* ---- Period pills -------------------------------------------------------- */
-.rpb-period-pills {
+.readninja-period-pills {
     display: flex;
     gap: 8px;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
-.rpb-period-pill {
+.readninja-period-pill {
     display: inline-block;
     padding: 5px 16px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
-    border: 1px solid var(--rpb-card-border);
+    border: 1px solid var(--readninja-card-border);
     background: #fff;
-    color: var(--rpb-text);
+    color: var(--readninja-text);
     transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.rpb-period-pill:hover {
-    border-color: var(--rpb-brand);
-    color: var(--rpb-brand);
+.readninja-period-pill:hover {
+    border-color: var(--readninja-brand);
+    color: var(--readninja-brand);
 }
 
-.rpb-period-pill--active {
-    background: var(--rpb-brand);
-    border-color: var(--rpb-brand);
+.readninja-period-pill--active {
+    background: var(--readninja-brand);
+    border-color: var(--readninja-brand);
     color: #fff;
 }
 
-.rpb-period-pill--active:hover {
+.readninja-period-pill--active:hover {
     color: #fff;
 }
 
 /* ---- Analytics table ----------------------------------------------------- */
-#rpb-analytics-table {
-    border-radius: var(--rpb-card-radius);
+#readninja-analytics-table {
+    border-radius: var(--readninja-card-radius);
     overflow: hidden;
-    border: 1px solid var(--rpb-card-border);
+    border: 1px solid var(--readninja-card-border);
 }
 
-#rpb-analytics-table thead th {
+#readninja-analytics-table thead th {
     background: #f6f7f7;
     padding: 10px 12px;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--rpb-text-muted);
-    border-bottom: 1px solid var(--rpb-card-border);
+    color: var(--readninja-text-muted);
+    border-bottom: 1px solid var(--readninja-card-border);
     white-space: nowrap;
 }
 
-#rpb-analytics-table thead th[data-col] {
+#readninja-analytics-table thead th[data-col] {
     cursor: pointer;
     user-select: none;
     transition: color 0.15s;
 }
 
-#rpb-analytics-table thead th[data-col]:hover {
-    color: var(--rpb-brand);
+#readninja-analytics-table thead th[data-col]:hover {
+    color: var(--readninja-brand);
 }
 
-#rpb-analytics-table thead th[data-col]::after {
+#readninja-analytics-table thead th[data-col]::after {
     content: ' ↕';
     font-size: 11px;
     opacity: 0.5;
 }
 
-#rpb-analytics-table thead th[data-sort="asc"]::after  { content: ' ▲'; opacity: 1; }
-#rpb-analytics-table thead th[data-sort="desc"]::after { content: ' ▼'; opacity: 1; }
+#readninja-analytics-table thead th[data-sort="asc"]::after  { content: ' ▲'; opacity: 1; }
+#readninja-analytics-table thead th[data-sort="desc"]::after { content: ' ▼'; opacity: 1; }
 
-#rpb-analytics-table tbody tr {
+#readninja-analytics-table tbody tr {
     background: #fff;
     transition: background 0.1s;
 }
 
-#rpb-analytics-table tbody tr:nth-child(even) {
+#readninja-analytics-table tbody tr:nth-child(even) {
     background: #fafafa;
 }
 
-#rpb-analytics-table tbody tr:hover {
+#readninja-analytics-table tbody tr:hover {
     background: #eef3fb;
 }
 
-#rpb-analytics-table tbody td {
+#readninja-analytics-table tbody td {
     padding: 10px 12px;
     font-size: 13px;
-    color: var(--rpb-text);
-    border-bottom: 1px solid var(--rpb-row-divider);
+    color: var(--readninja-text);
+    border-bottom: 1px solid var(--readninja-row-divider);
     vertical-align: middle;
 }
 
-#rpb-analytics-table tbody tr:last-child td {
+#readninja-analytics-table tbody tr:last-child td {
     border-bottom: none;
 }
 
 /* ---- Mini progress bar --------------------------------------------------- */
-.rpb-mini-bar {
+.readninja-mini-bar {
     height: 6px;
     background: #e5e7eb;
     border-radius: 3px;
@@ -676,20 +676,20 @@
     max-width: 120px;
 }
 
-.rpb-mini-bar__fill {
+.readninja-mini-bar__fill {
     height: 100%;
-    background: var(--rpb-brand);
+    background: var(--readninja-brand);
     border-radius: 3px;
     min-width: 2px;
     transition: width 0.3s ease;
 }
 
-.rpb-analytics-cell {
+.readninja-analytics-cell {
     white-space: nowrap;
 }
 
 /* ---- Reset / danger button ----------------------------------------------- */
-.rpb-btn-danger {
+.readninja-btn-danger {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -705,23 +705,23 @@
     text-decoration: none;
 }
 
-.rpb-btn-danger:hover {
+.readninja-btn-danger:hover {
     background: #b91c1c;
     color: #fff;
     border-color: #b91c1c;
 }
 
-.rpb-reset-section {
+.readninja-reset-section {
     margin-top: 32px;
     padding-top: 24px;
-    border-top: 1px solid var(--rpb-card-border);
+    border-top: 1px solid var(--readninja-card-border);
     display: flex;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
 }
 
-.rpb-reset-section__label {
+.readninja-reset-section__label {
     font-size: 13px;
-    color: var(--rpb-text-muted);
+    color: var(--readninja-text-muted);
 }

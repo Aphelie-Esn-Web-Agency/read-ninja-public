@@ -243,11 +243,11 @@ msgstr "A barra atualiza-se em tempo real."
 msgid "Enregistrer les réglages"
 msgstr "Guardar definições"
 
-#: includes/class-rpb-upgrade.php:315
+#: includes/class-readninja-upgrade.php:315
 msgid "Passer à Pro"
 msgstr "Passar para Pro"
 
-#: includes/class-rpb-upgrade.php:301
+#: includes/class-readninja-upgrade.php:301
 msgid "En savoir plus →"
 msgstr "Saber mais →"
 
@@ -381,119 +381,119 @@ msgstr "Texto mostrado antes do tempo. Exemplo: «Ainda» → «Ainda 3 min rest
 msgid "Texte affiché après le temps. Exemple : « min restantes »."
 msgstr "Texto mostrado depois do tempo. Exemplo: «min restantes»."
 
-#: includes/class-rpb-upgrade.php:69
+#: includes/class-readninja-upgrade.php:69
 msgid "Fonctionnalités Pro"
 msgstr "Funcionalidades Pro"
 
-#: includes/class-rpb-upgrade.php:92
+#: includes/class-readninja-upgrade.php:92
 msgid "Ces fonctionnalités sont disponibles dans ReadNinja Pro. Cliquez sur « Débloquer » pour les activer."
 msgstr "Estas funcionalidades estão disponíveis no ReadNinja Pro. Clique em «Desbloquear» para as ativar."
 
-#: includes/class-rpb-upgrade.php:103
+#: includes/class-readninja-upgrade.php:103
 msgid "Aperçu Pro"
 msgstr "Pré-visualização Pro"
 
-#: includes/class-rpb-upgrade.php:115
+#: includes/class-readninja-upgrade.php:115
 msgid "Débloquer avec Pro →"
 msgstr "Desbloquear com o Pro →"
 
-#: includes/class-rpb-upgrade.php:124
+#: includes/class-readninja-upgrade.php:124
 msgid "Barre en dégradé"
 msgstr "Barra com gradiente"
 
-#: includes/class-rpb-upgrade.php:125
+#: includes/class-readninja-upgrade.php:125
 msgid "Remplacez la couleur unie par un dégradé de 2 couleurs avec angle personnalisable."
 msgstr "Substitua a cor sólida por um gradiente de 2 cores com ângulo personalizável."
 
-#: includes/class-rpb-upgrade.php:129
+#: includes/class-readninja-upgrade.php:129
 msgid "Avancement séquentiel"
 msgstr "Progresso por etapas"
 
-#: includes/class-rpb-upgrade.php:130
+#: includes/class-readninja-upgrade.php:130
 msgid "Faites avancer la barre par paliers fixes (5, 10, 25 %) avec animation fluide."
 msgstr "Faça a barra avançar em passos fixos (5, 10, 25 %) com animação fluida."
 
-#: includes/class-rpb-upgrade.php:134
+#: includes/class-readninja-upgrade.php:134
 msgid "Threshold trigger"
 msgstr "Threshold trigger"
 
-#: includes/class-rpb-upgrade.php:135
+#: includes/class-readninja-upgrade.php:135
 msgid "Déclenchez une action JS personnalisée à un seuil de lecture (75 %, 90 %…)."
 msgstr "Acione uma ação JS personalizada num limiar de leitura (75 %, 90 %…)."
 
-#: includes/class-rpb-upgrade.php:139
+#: includes/class-readninja-upgrade.php:139
 msgid "Conditions d'affichage avancées"
 msgstr "Condições de exibição avançadas"
 
-#: includes/class-rpb-upgrade.php:140
+#: includes/class-readninja-upgrade.php:140
 msgid "Ciblez les CPT, archives, taxonomies et templates FSE de votre choix."
 msgstr "Direcione os CPTs, arquivos, taxonomias e templates FSE da sua escolha."
 
-#: includes/class-rpb-upgrade.php:144
+#: includes/class-readninja-upgrade.php:144
 msgid "Analytics de lecture"
 msgstr "Analytics de leitura"
 
-#: includes/class-rpb-upgrade.php:145
+#: includes/class-readninja-upgrade.php:145
 msgid "Mesurez la profondeur de lecture et le taux de complétion par article."
 msgstr "Meça a profundidade de leitura e a taxa de conclusão por artigo."
 
-#: includes/class-rpb-upgrade.php:149
+#: includes/class-readninja-upgrade.php:149
 msgid "Personnalisation par article"
 msgstr "Personalização por artigo"
 
-#: includes/class-rpb-upgrade.php:150
+#: includes/class-readninja-upgrade.php:150
 msgid "Définissez la couleur, la hauteur ou le dégradé spécifique d'un article."
 msgstr "Defina a cor, a altura ou o gradiente específicos de um artigo."
 
-#: includes/class-rpb-upgrade.php:190
+#: includes/class-readninja-upgrade.php:190
 msgid "Merci d'utiliser ReadNinja ! Débloquez les analytics de lecture, les dégradés et le ciblage avancé avec ReadNinja Pro."
 msgstr "Obrigado por usar o ReadNinja! Desbloqueie analytics de leitura, gradientes e segmentação avançada com o ReadNinja Pro."
 
-#: includes/class-rpb-upgrade.php:193
+#: includes/class-readninja-upgrade.php:193
 msgid "Découvrir Pro →"
 msgstr "Descobrir Pro →"
 
-#: includes/class-rpb-upgrade.php:230
+#: includes/class-readninja-upgrade.php:230
 msgid "Analytics"
 msgstr "Analytics"
 
-#: includes/class-rpb-upgrade.php:240
+#: includes/class-readninja-upgrade.php:240
 msgid "Analytics de lecture — ReadNinja Pro"
 msgstr "Analytics de leitura — ReadNinja Pro"
 
-#: includes/class-rpb-upgrade.php:244
+#: includes/class-readninja-upgrade.php:244
 msgid "Voyez jusqu'où scrollent vos lecteurs sur chaque article"
 msgstr "Veja até onde os seus leitores rolam em cada artigo"
 
-#: includes/class-rpb-upgrade.php:245
+#: includes/class-readninja-upgrade.php:245
 msgid "Identifiez vos contenus les plus engageants"
 msgstr "Identifique os seus conteúdos mais envolventes"
 
-#: includes/class-rpb-upgrade.php:246
+#: includes/class-readninja-upgrade.php:246
 msgid "Optimisez vos articles grâce aux données réelles"
 msgstr "Otimize os seus artigos com dados reais"
 
-#: includes/class-rpb-upgrade.php:274
+#: includes/class-readninja-upgrade.php:274
 msgid "Débloquez les analytics"
 msgstr "Desbloqueie as analytics"
 
-#: includes/class-rpb-upgrade.php:277
+#: includes/class-readninja-upgrade.php:277
 msgid "Passer à ReadNinja Pro — dès 29€/an"
 msgstr "Atualizar para o ReadNinja Pro — a partir de 29€/ano"
 
-#: includes/class-rpb-upgrade.php:280
+#: includes/class-readninja-upgrade.php:280
 msgid "Satisfait ou remboursé 30 jours"
 msgstr "Satisfeito ou reembolsado em 30 dias"
 
-#: includes/class-rpb-upgrade.php:299
+#: includes/class-readninja-upgrade.php:299
 msgid "ReadNinja Pro — Analytics · Dégradés · Ciblage avancé · Support prioritaire"
 msgstr "ReadNinja Pro — Analytics · Gradientes · Segmentação avançada · Suporte prioritário"
 
-#: includes/class-rpb-upgrade.php:328
+#: includes/class-readninja-upgrade.php:328
 msgid "Documentation"
 msgstr "Documentação"
 
-#: includes/class-rpb-upgrade.php:333
+#: includes/class-readninja-upgrade.php:333
 msgid "Support"
 msgstr "Suporte"
 

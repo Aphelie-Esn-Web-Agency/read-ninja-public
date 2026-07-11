@@ -230,11 +230,11 @@ msgstr "The bar updates in real time."
 msgid "Enregistrer les réglages"
 msgstr "Save settings"
 
-#: includes/class-rpb-upgrade.php:315
+#: includes/class-readninja-upgrade.php:315
 msgid "Passer à Pro"
 msgstr "Go Pro"
 
-#: includes/class-rpb-upgrade.php:301
+#: includes/class-readninja-upgrade.php:301
 msgid "En savoir plus →"
 msgstr "Learn more →"
 
@@ -368,7 +368,7 @@ msgstr "Text shown before the time. Example: “About” → “About 3 min left
 msgid "Texte affiché après le temps. Exemple : « min restantes »."
 msgstr "Text shown after the time. Example: “min left”."
 
-#: includes/class-rpb-upgrade.php:230
+#: includes/class-readninja-upgrade.php:230
 msgid "Analytics"
 msgstr "Analytics"
 
@@ -440,115 +440,115 @@ msgstr "https://read-ninja.com"
 msgid "Read Ninja - Reading Progress Bar"
 msgstr "Read Ninja - Reading Progress Bar"
 
-#: includes/class-rpb-upgrade.php:69
+#: includes/class-readninja-upgrade.php:69
 msgid "Fonctionnalités Pro"
 msgstr "Pro features"
 
-#: includes/class-rpb-upgrade.php:92
+#: includes/class-readninja-upgrade.php:92
 msgid "Ces fonctionnalités sont disponibles dans ReadNinja Pro. Cliquez sur « Débloquer » pour les activer."
 msgstr "These features are available in ReadNinja Pro. Click “Unlock” to enable them."
 
-#: includes/class-rpb-upgrade.php:103
+#: includes/class-readninja-upgrade.php:103
 msgid "Aperçu Pro"
 msgstr "Pro preview"
 
-#: includes/class-rpb-upgrade.php:115
+#: includes/class-readninja-upgrade.php:115
 msgid "Débloquer avec Pro →"
 msgstr "Unlock with Pro →"
 
-#: includes/class-rpb-upgrade.php:124
+#: includes/class-readninja-upgrade.php:124
 msgid "Barre en dégradé"
 msgstr "Gradient bar"
 
-#: includes/class-rpb-upgrade.php:125
+#: includes/class-readninja-upgrade.php:125
 msgid "Remplacez la couleur unie par un dégradé de 2 couleurs avec angle personnalisable."
 msgstr "Replace the solid color with a 2-color gradient and a customizable angle."
 
-#: includes/class-rpb-upgrade.php:129
+#: includes/class-readninja-upgrade.php:129
 msgid "Avancement séquentiel"
 msgstr "Stepped progress"
 
-#: includes/class-rpb-upgrade.php:130
+#: includes/class-readninja-upgrade.php:130
 msgid "Faites avancer la barre par paliers fixes (5, 10, 25 %) avec animation fluide."
 msgstr "Advance the bar in fixed steps (5, 10, 25 %) with smooth animation."
 
-#: includes/class-rpb-upgrade.php:134
+#: includes/class-readninja-upgrade.php:134
 msgid "Threshold trigger"
 msgstr "Threshold trigger"
 
-#: includes/class-rpb-upgrade.php:135
+#: includes/class-readninja-upgrade.php:135
 msgid "Déclenchez une action JS personnalisée à un seuil de lecture (75 %, 90 %…)."
 msgstr "Trigger a custom JS action at a reading threshold (75 %, 90 %…)."
 
-#: includes/class-rpb-upgrade.php:139
+#: includes/class-readninja-upgrade.php:139
 msgid "Conditions d'affichage avancées"
 msgstr "Advanced display conditions"
 
-#: includes/class-rpb-upgrade.php:140
+#: includes/class-readninja-upgrade.php:140
 msgid "Ciblez les CPT, archives, taxonomies et templates FSE de votre choix."
 msgstr "Target the CPTs, archives, taxonomies and FSE templates of your choice."
 
-#: includes/class-rpb-upgrade.php:144
+#: includes/class-readninja-upgrade.php:144
 msgid "Analytics de lecture"
 msgstr "Reading analytics"
 
-#: includes/class-rpb-upgrade.php:145
+#: includes/class-readninja-upgrade.php:145
 msgid "Mesurez la profondeur de lecture et le taux de complétion par article."
 msgstr "Measure reading depth and completion rate per post."
 
-#: includes/class-rpb-upgrade.php:149
+#: includes/class-readninja-upgrade.php:149
 msgid "Personnalisation par article"
 msgstr "Per-post customization"
 
-#: includes/class-rpb-upgrade.php:150
+#: includes/class-readninja-upgrade.php:150
 msgid "Définissez la couleur, la hauteur ou le dégradé spécifique d'un article."
 msgstr "Set the color, height or gradient specific to a post."
 
-#: includes/class-rpb-upgrade.php:190
+#: includes/class-readninja-upgrade.php:190
 msgid "Merci d'utiliser ReadNinja ! Débloquez les analytics de lecture, les dégradés et le ciblage avancé avec ReadNinja Pro."
 msgstr "Thanks for using ReadNinja! Unlock reading analytics, gradients and advanced targeting with ReadNinja Pro."
 
-#: includes/class-rpb-upgrade.php:193
+#: includes/class-readninja-upgrade.php:193
 msgid "Découvrir Pro →"
 msgstr "Discover Pro →"
 
-#: includes/class-rpb-upgrade.php:240
+#: includes/class-readninja-upgrade.php:240
 msgid "Analytics de lecture — ReadNinja Pro"
 msgstr "Reading analytics — ReadNinja Pro"
 
-#: includes/class-rpb-upgrade.php:244
+#: includes/class-readninja-upgrade.php:244
 msgid "Voyez jusqu'où scrollent vos lecteurs sur chaque article"
 msgstr "See how far your readers scroll on each post"
 
-#: includes/class-rpb-upgrade.php:245
+#: includes/class-readninja-upgrade.php:245
 msgid "Identifiez vos contenus les plus engageants"
 msgstr "Identify your most engaging content"
 
-#: includes/class-rpb-upgrade.php:246
+#: includes/class-readninja-upgrade.php:246
 msgid "Optimisez vos articles grâce aux données réelles"
 msgstr "Optimize your posts with real data"
 
-#: includes/class-rpb-upgrade.php:274
+#: includes/class-readninja-upgrade.php:274
 msgid "Débloquez les analytics"
 msgstr "Unlock analytics"
 
-#: includes/class-rpb-upgrade.php:277
+#: includes/class-readninja-upgrade.php:277
 msgid "Passer à ReadNinja Pro — dès 29€/an"
 msgstr "Upgrade to ReadNinja Pro — from €29/year"
 
-#: includes/class-rpb-upgrade.php:280
+#: includes/class-readninja-upgrade.php:280
 msgid "Satisfait ou remboursé 30 jours"
 msgstr "30-day money-back guarantee"
 
-#: includes/class-rpb-upgrade.php:299
+#: includes/class-readninja-upgrade.php:299
 msgid "ReadNinja Pro — Analytics · Dégradés · Ciblage avancé · Support prioritaire"
 msgstr "ReadNinja Pro — Analytics · Gradients · Advanced targeting · Priority support"
 
-#: includes/class-rpb-upgrade.php:328
+#: includes/class-readninja-upgrade.php:328
 msgid "Documentation"
 msgstr "Documentation"
 
-#: includes/class-rpb-upgrade.php:333
+#: includes/class-readninja-upgrade.php:333
 msgid "Support"
 msgstr "Support"
 

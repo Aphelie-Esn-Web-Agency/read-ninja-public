@@ -5,20 +5,20 @@
    ============================================================ */
 
 /* ----- Levier 1: locked Pro feature rows in the settings table ----- */
-.rpb-pro-locked-row > th,
-.rpb-pro-locked-row > td {
+.readninja-pro-locked-row > th,
+.readninja-pro-locked-row > td {
 	background: #0F1F3D !important;
 	border-top: 1px solid #1e3a5f;
 }
-.rpb-pro-locked-row > th {
+.readninja-pro-locked-row > th {
 	color: #cbd5e1;
 }
-.rpb-pro-locked-row > th label,
-.rpb-pro-locked-row > th {
+.readninja-pro-locked-row > th label,
+.readninja-pro-locked-row > th {
 	color: #e2e8f0 !important;
 	font-weight: 600;
 }
-.rpb-pro-badge {
+.readninja-pro-badge {
 	display: inline-block;
 	background: #112240;
 	color: #fff;
@@ -32,18 +32,18 @@
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 }
-.rpb-pro-locked input,
-.rpb-pro-locked select {
+.readninja-pro-locked input,
+.readninja-pro-locked select {
 	cursor: not-allowed;
 	opacity: 0.5;
 	pointer-events: none;
 }
-.rpb-pro-locked .description {
+.readninja-pro-locked .description {
 	margin: 6px 0 8px;
 	color: #94a3b8;
 	font-size: 12.5px;
 }
-.rpb-pro-locked .rpb-unlock-link {
+.readninja-pro-locked .readninja-unlock-link {
 	display: inline-block;
 	color: #00C9A7;
 	font-weight: 600;
@@ -51,40 +51,40 @@
 	text-decoration: none;
 	transition: opacity 0.15s;
 }
-.rpb-pro-locked .rpb-unlock-link:hover,
-.rpb-pro-locked .rpb-unlock-link:focus {
+.readninja-pro-locked .readninja-unlock-link:hover,
+.readninja-pro-locked .readninja-unlock-link:focus {
 	color: #00C9A7;
 	text-decoration: underline;
 }
 
 /* The intro paragraph row inside the section */
-#rpb_pro_features + p {
+#readninja_pro_features + p {
 	color: #64748b;
 }
 
 /* ----- Levier 2: contextual admin notice ----- */
-.rpb-notice-upgrade {
+.readninja-notice-upgrade {
 	border-left-color: #00C9A7 !important;
 	padding: 12px 14px !important;
 }
-.rpb-notice-upgrade .rpb-notice-content {
+.readninja-notice-upgrade .readninja-notice-content {
 	display: flex;
 	align-items: center;
 	gap: 14px;
 }
-.rpb-notice-upgrade .rpb-notice-icon {
+.readninja-notice-upgrade .readninja-notice-icon {
 	flex-shrink: 0;
 	width: 32px;
 	height: 32px;
 	color: #00C9A7;
 }
-.rpb-notice-upgrade .rpb-notice-text {
+.readninja-notice-upgrade .readninja-notice-text {
 	flex: 1;
 	margin: 0;
 	font-size: 13.5px;
 	line-height: 1.45;
 }
-.rpb-notice-upgrade .rpb-notice-cta {
+.readninja-notice-upgrade .readninja-notice-cta {
 	background: #00C9A7;
 	color: #0A1628 !important;
 	padding: 6px 14px;
@@ -95,52 +95,52 @@
 	font-size: 13px;
 	transition: background 0.15s;
 }
-.rpb-notice-upgrade .rpb-notice-cta:hover,
-.rpb-notice-upgrade .rpb-notice-cta:focus {
+.readninja-notice-upgrade .readninja-notice-cta:hover,
+.readninja-notice-upgrade .readninja-notice-cta:focus {
 	background: #00b596;
 	color: #0A1628 !important;
 }
 
 /* ----- Levier 3: Analytics promo tab ----- */
-.rpb-analytics-promo {
+.readninja-analytics-promo {
 	background: #0A1628;
 	color: #cbd5e1;
 	border-radius: 8px;
 	padding: 24px;
 	margin-top: 16px;
 }
-.rpb-analytics-promo__header {
+.readninja-analytics-promo__header {
 	display: flex;
 	align-items: center;
 	gap: 16px;
 	margin-bottom: 16px;
 }
-.rpb-analytics-promo__icon {
+.readninja-analytics-promo__icon {
 	color: #00C9A7;
 	font-size: 48px !important;
 	width: 48px !important;
 	height: 48px !important;
 	line-height: 1;
 }
-.rpb-analytics-promo__title {
+.readninja-analytics-promo__title {
 	color: #fff;
 	font-size: 22px;
 	font-weight: 700;
 	margin: 0;
 }
-.rpb-analytics-promo__benefits {
+.readninja-analytics-promo__benefits {
 	list-style: none;
 	margin: 0 0 20px;
 	padding: 0;
 }
-.rpb-analytics-promo__benefits li {
+.readninja-analytics-promo__benefits li {
 	margin: 8px 0;
 	padding-left: 24px;
 	position: relative;
 	color: #cbd5e1;
 	font-size: 14px;
 }
-.rpb-analytics-promo__benefits li::before {
+.readninja-analytics-promo__benefits li::before {
 	content: "✓";
 	position: absolute;
 	left: 0;
@@ -148,7 +148,7 @@
 	font-weight: 700;
 }
 
-.rpb-analytics-fake {
+.readninja-analytics-fake {
 	position: relative;
 	background: #112240;
 	border-radius: 6px;
@@ -156,13 +156,13 @@
 	margin-top: 16px;
 	min-height: 220px;
 }
-.rpb-analytics-fake__data {
+.readninja-analytics-fake__data {
 	filter: blur(4px);
 	opacity: 0.4;
 	pointer-events: none;
 	user-select: none;
 }
-.rpb-analytics-fake__row {
+.readninja-analytics-fake__row {
 	display: flex;
 	justify-content: space-between;
 	gap: 16px;
@@ -171,11 +171,11 @@
 	color: #cbd5e1;
 	font-size: 14px;
 }
-.rpb-analytics-fake__row:last-child {
+.readninja-analytics-fake__row:last-child {
 	border-bottom: none;
 }
 
-.rpb-analytics-overlay {
+.readninja-analytics-overlay {
 	position: absolute;
 	inset: 0;
 	display: flex;
@@ -187,13 +187,13 @@
 	border-radius: 6px;
 	padding: 24px;
 }
-.rpb-analytics-overlay__title {
+.readninja-analytics-overlay__title {
 	color: #fff;
 	font-size: 18px;
 	font-weight: 700;
 	margin: 0 0 14px;
 }
-.rpb-analytics-overlay__cta {
+.readninja-analytics-overlay__cta {
 	display: inline-block;
 	background: #00C9A7;
 	color: #0A1628 !important;
@@ -205,19 +205,19 @@
 	margin-bottom: 10px;
 	transition: background 0.15s;
 }
-.rpb-analytics-overlay__cta:hover,
-.rpb-analytics-overlay__cta:focus {
+.readninja-analytics-overlay__cta:hover,
+.readninja-analytics-overlay__cta:focus {
 	background: #00b596;
 	color: #0A1628 !important;
 }
-.rpb-analytics-overlay__sub {
+.readninja-analytics-overlay__sub {
 	color: #94a3b8;
 	font-size: 12px;
 	margin: 0;
 }
 
 /* ----- Levier 4: footer bar ----- */
-.rpb-admin-footer {
+.readninja-admin-footer {
 	background: #0A1628;
 	color: #cbd5e1;
 	text-align: center;
@@ -226,18 +226,18 @@
 	font-size: 13px;
 	border-radius: 4px;
 }
-.rpb-admin-footer__bolt {
+.readninja-admin-footer__bolt {
 	color: #00C9A7;
 	margin-right: 4px;
 }
-.rpb-admin-footer a {
+.readninja-admin-footer a {
 	color: #00C9A7;
 	font-weight: 600;
 	text-decoration: none;
 	margin-left: 8px;
 }
-.rpb-admin-footer a:hover,
-.rpb-admin-footer a:focus {
+.readninja-admin-footer a:hover,
+.readninja-admin-footer a:focus {
 	text-decoration: underline;
 	color: #00C9A7;
 }

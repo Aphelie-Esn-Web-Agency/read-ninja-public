@@ -1,6 +1,6 @@
 <?php
 /**
- * RPB Upgrade — Pro upsell logic for the free plugin.
+ * Read Ninja Upgrade — Pro upsell logic for the free plugin.
  *
  * Loaded only in admin context, only when Pro is not active.
  * Handles 5 upsell levers: locked features in settings, contextual notice,
@@ -11,11 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'rpb_is_plugin_page' ) ) {
+if ( ! function_exists( 'readninja_is_plugin_page' ) ) {
 	/**
 	 * Returns true if the current admin screen is the ReadNinja settings page.
 	 */
-	function rpb_is_plugin_page(): bool {
+	function readninja_is_plugin_page(): bool {
 		if ( ! function_exists( 'get_current_screen' ) ) {
 			return false;
 		}
@@ -27,7 +27,7 @@ if ( ! function_exists( 'rpb_is_plugin_page' ) ) {
 	}
 }
 
-class RPB_Upgrade {
+class READNINJA_Upgrade {
 
 	const PRO_URL     = 'https://read-ninja.com/pro';
 	const DOCS_URL    = 'https://read-ninja.com/docs';
@@ -40,18 +40,18 @@ class RPB_Upgrade {
 		// Levier 2 — Contextual admin notice (one-time, AJAX dismiss)
 		add_action( 'admin_init', [ $this, 'maybe_set_activation_time' ] );
 		add_action( 'admin_notices', [ $this, 'render_admin_notice' ] );
-		add_action( 'wp_ajax_rpb_dismiss_notice', [ $this, 'ajax_dismiss_notice' ] );
+		add_action( 'wp_ajax_readninja_dismiss_notice', [ $this, 'ajax_dismiss_notice' ] );
 
 		// Levier 3 — Analytics promo tab
-		add_filter( 'rpb_settings_tabs', [ $this, 'add_analytics_tab' ], 5 );
-		add_action( 'rpb_render_tab_analytics', [ $this, 'render_analytics_tab' ] );
+		add_filter( 'readninja_settings_tabs', [ $this, 'add_analytics_tab' ], 5 );
+		add_action( 'readninja_render_tab_analytics', [ $this, 'render_analytics_tab' ] );
 
 		// Levier 4 — Footer bar on plugin pages
 		add_action( 'admin_footer', [ $this, 'render_footer' ] );
 
 		// Levier 5 — Plugin listing links
-		if ( defined( 'RPB_BASENAME' ) ) {
-			add_filter( 'plugin_action_links_' . RPB_BASENAME, [ $this, 'plugin_action_links' ] );
+		if ( defined( 'READNINJA_BASENAME' ) ) {
+			add_filter( 'plugin_action_links_' . READNINJA_BASENAME, [ $this, 'plugin_action_links' ] );
 		}
 		add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 2 );
 
@@ -65,7 +65,7 @@ class RPB_Upgrade {
 
 	public function register_pro_features_section(): void {
 		add_settings_section(
-			'rpb_pro_features',
+			'readninja_pro_features',
 			'<span class="dashicons dashicons-star-filled" style="color:#00C9A7;vertical-align:middle"></span> ' . esc_html__( 'Fonctionnalités Pro', 'read-ninja' ),
 			[ $this, 'render_pro_features_intro' ],
 			'read-ninja'
@@ -73,13 +73,13 @@ class RPB_Upgrade {
 
 		foreach ( $this->get_pro_features() as $key => $feature ) {
 			add_settings_field(
-				'rpb_pro_feature_' . $key,
-				wp_kses_post( $feature['label'] ) . ' <span class="rpb-pro-badge">PRO</span>',
+				'readninja_pro_feature_' . $key,
+				wp_kses_post( $feature['label'] ) . ' <span class="readninja-pro-badge">PRO</span>',
 				[ $this, 'render_pro_feature_field' ],
 				'read-ninja',
-				'rpb_pro_features',
+				'readninja_pro_features',
 				[
-					'class'       => 'rpb-pro-locked-row',
+					'class'       => 'readninja-pro-locked-row',
 					'description' => $feature['description'],
 					'control'     => $feature['control'],
 				]
@@ -97,7 +97,7 @@ class RPB_Upgrade {
 		$description = isset( $args['description'] ) ? (string) $args['description'] : '';
 		$control     = isset( $args['control'] ) ? (string) $args['control'] : 'checkbox';
 		?>
-		<div class="rpb-pro-locked">
+		<div class="readninja-pro-locked">
 			<?php if ( 'select' === $control ) : ?>
 				<select disabled>
 					<option><?php esc_html_e( 'Aperçu Pro', 'read-ninja' ); ?></option>
@@ -111,7 +111,7 @@ class RPB_Upgrade {
 			<p class="description"><?php echo esc_html( $description ); ?></p>
 			<a href="<?php echo esc_url( self::PRO_URL ); ?>"
 			   target="_blank" rel="noopener noreferrer"
-			   class="rpb-unlock-link">
+			   class="readninja-unlock-link">
 				<?php esc_html_e( 'Débloquer avec Pro →', 'read-ninja' ); ?>
 			</a>
 		</div>
@@ -158,38 +158,38 @@ class RPB_Upgrade {
 	// =====================================================================
 
 	public function maybe_set_activation_time(): void {
-		if ( ! get_option( 'rpb_activated_at' ) ) {
-			update_option( 'rpb_activated_at', time() );
+		if ( ! get_option( 'readninja_activated_at' ) ) {
+			update_option( 'readninja_activated_at', time() );
 		}
 	}
 
 	public function render_admin_notice(): void {
-		if ( ! rpb_is_plugin_page() ) {
+		if ( ! readninja_is_plugin_page() ) {
 			return;
 		}
-		if ( get_option( 'rpb_notice_dismissed' ) ) {
+		if ( get_option( 'readninja_notice_dismissed' ) ) {
 			return;
 		}
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-		$activated = (int) get_option( 'rpb_activated_at', 0 );
+		$activated = (int) get_option( 'readninja_activated_at', 0 );
 		if ( ! $activated || ( time() - $activated ) > 7 * DAY_IN_SECONDS ) {
 			return;
 		}
 
-		$nonce = wp_create_nonce( 'rpb_dismiss_notice' );
+		$nonce = wp_create_nonce( 'readninja_dismiss_notice' );
 		?>
-		<div class="notice notice-info is-dismissible rpb-notice-upgrade" data-rpb-nonce="<?php echo esc_attr( $nonce ); ?>">
-			<div class="rpb-notice-content">
-				<svg class="rpb-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		<div class="notice notice-info is-dismissible readninja-notice-upgrade" data-readninja-nonce="<?php echo esc_attr( $nonce ); ?>">
+			<div class="readninja-notice-content">
+				<svg class="readninja-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 					<circle cx="12" cy="12" r="2.5"/>
 					<path d="M12 2 L13.5 10 L22 12 L13.5 14 L12 22 L10.5 14 L2 12 L10.5 10 Z"/>
 				</svg>
-				<p class="rpb-notice-text">
+				<p class="readninja-notice-text">
 					<?php esc_html_e( "Merci d'utiliser ReadNinja ! Débloquez les analytics de lecture, les dégradés et le ciblage avancé avec ReadNinja Pro.", 'read-ninja' ); ?>
 				</p>
-				<a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener noreferrer" class="rpb-notice-cta">
+				<a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener noreferrer" class="readninja-notice-cta">
 					<?php esc_html_e( 'Découvrir Pro →', 'read-ninja' ); ?>
 				</a>
 			</div>
@@ -198,11 +198,11 @@ class RPB_Upgrade {
 	}
 
 	public function ajax_dismiss_notice(): void {
-		check_ajax_referer( 'rpb_dismiss_notice' );
+		check_ajax_referer( 'readninja_dismiss_notice' );
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_send_json_error( null, 403 );
 		}
-		update_option( 'rpb_notice_dismissed', 1 );
+		update_option( 'readninja_notice_dismissed', 1 );
 		wp_send_json_success();
 	}
 
@@ -217,50 +217,50 @@ class RPB_Upgrade {
 
 	public function render_analytics_tab(): void {
 		?>
-		<div class="rpb-analytics-promo">
-			<div class="rpb-analytics-promo__header">
-				<span class="dashicons dashicons-chart-bar rpb-analytics-promo__icon"></span>
-				<h2 class="rpb-analytics-promo__title">
+		<div class="readninja-analytics-promo">
+			<div class="readninja-analytics-promo__header">
+				<span class="dashicons dashicons-chart-bar readninja-analytics-promo__icon"></span>
+				<h2 class="readninja-analytics-promo__title">
 					<?php esc_html_e( 'Analytics de lecture — ReadNinja Pro', 'read-ninja' ); ?>
 				</h2>
 			</div>
-			<ul class="rpb-analytics-promo__benefits">
+			<ul class="readninja-analytics-promo__benefits">
 				<li><?php esc_html_e( "Voyez jusqu'où scrollent vos lecteurs sur chaque article", 'read-ninja' ); ?></li>
 				<li><?php esc_html_e( 'Identifiez vos contenus les plus engageants', 'read-ninja' ); ?></li>
 				<li><?php esc_html_e( 'Optimisez vos articles grâce aux données réelles', 'read-ninja' ); ?></li>
 			</ul>
 
-			<div class="rpb-analytics-fake">
-				<div class="rpb-analytics-fake__data" aria-hidden="true">
-					<div class="rpb-analytics-fake__row">
+			<div class="readninja-analytics-fake">
+				<div class="readninja-analytics-fake__data" aria-hidden="true">
+					<div class="readninja-analytics-fake__row">
 						<span>Guide SEO 2025</span>
 						<span>Scroll moyen : 73%</span>
 						<span>142 lectures</span>
 					</div>
-					<div class="rpb-analytics-fake__row">
+					<div class="readninja-analytics-fake__row">
 						<span>10 astuces WordPress</span>
 						<span>Scroll moyen : 68%</span>
 						<span>98 lectures</span>
 					</div>
-					<div class="rpb-analytics-fake__row">
+					<div class="readninja-analytics-fake__row">
 						<span>Comparatif hébergeurs 2025</span>
 						<span>Scroll moyen : 81%</span>
 						<span>67 lectures</span>
 					</div>
-					<div class="rpb-analytics-fake__row">
+					<div class="readninja-analytics-fake__row">
 						<span>Tutoriel Gutenberg</span>
 						<span>Scroll moyen : 55%</span>
 						<span>43 lectures</span>
 					</div>
 				</div>
-				<div class="rpb-analytics-overlay">
-					<h3 class="rpb-analytics-overlay__title">
+				<div class="readninja-analytics-overlay">
+					<h3 class="readninja-analytics-overlay__title">
 						<?php esc_html_e( 'Débloquez les analytics', 'read-ninja' ); ?>
 					</h3>
-					<a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener noreferrer" class="rpb-analytics-overlay__cta">
+					<a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener noreferrer" class="readninja-analytics-overlay__cta">
 						<?php esc_html_e( 'Passer à ReadNinja Pro — dès 29€/an', 'read-ninja' ); ?>
 					</a>
-					<p class="rpb-analytics-overlay__sub">
+					<p class="readninja-analytics-overlay__sub">
 						<?php esc_html_e( 'Satisfait ou remboursé 30 jours', 'read-ninja' ); ?>
 					</p>
 				</div>
@@ -274,12 +274,12 @@ class RPB_Upgrade {
 	// =====================================================================
 
 	public function render_footer(): void {
-		if ( ! rpb_is_plugin_page() ) {
+		if ( ! readninja_is_plugin_page() ) {
 			return;
 		}
 		?>
-		<div class="rpb-admin-footer">
-			<span class="rpb-admin-footer__bolt">⚡</span>
+		<div class="readninja-admin-footer">
+			<span class="readninja-admin-footer__bolt">⚡</span>
 			<?php esc_html_e( 'ReadNinja Pro — Analytics · Dégradés · Ciblage avancé · Support prioritaire', 'read-ninja' ); ?>
 			<a href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener noreferrer">
 				<?php esc_html_e( 'En savoir plus →', 'read-ninja' ); ?>
@@ -303,7 +303,7 @@ class RPB_Upgrade {
 	}
 
 	public function plugin_row_meta( array $links, string $file ): array {
-		if ( ! defined( 'RPB_BASENAME' ) || $file !== RPB_BASENAME ) {
+		if ( ! defined( 'READNINJA_BASENAME' ) || $file !== READNINJA_BASENAME ) {
 			return $links;
 		}
 		$links[] = sprintf(
@@ -324,20 +324,20 @@ class RPB_Upgrade {
 	// =====================================================================
 
 	public function enqueue_assets(): void {
-		if ( ! rpb_is_plugin_page() ) {
+		if ( ! readninja_is_plugin_page() ) {
 			return;
 		}
 		wp_enqueue_style(
-			'rpb-admin-upgrade',
-			RPB_URL . 'assets/css/rpb-admin-upgrade.css',
-			[ 'rpb-admin' ],
-			RPB_VERSION
+			'readninja-admin-upgrade',
+			READNINJA_URL . 'assets/css/readninja-admin-upgrade.css',
+			[ 'readninja-admin' ],
+			READNINJA_VERSION
 		);
 		wp_enqueue_script(
-			'rpb-admin-notice-dismiss',
-			RPB_URL . 'assets/js/admin/admin-notice-dismiss.js',
+			'readninja-admin-notice-dismiss',
+			READNINJA_URL . 'assets/js/admin/admin-notice-dismiss.js',
 			[],
-			RPB_VERSION,
+			READNINJA_VERSION,
 			true
 		);
 	}

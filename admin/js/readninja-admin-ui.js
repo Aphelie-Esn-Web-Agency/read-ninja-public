@@ -7,17 +7,17 @@
         var btn = document.getElementById( 'submit' );
         if ( btn ) {
             var originalLabel = btn.value;
-            btn.value = '\u2713 ' + ( window.rpbAdminUi && window.rpbAdminUi.saved || 'Réglages enregistrés' );
-            btn.classList.add( 'rpb-save-success' );
+            btn.value = '\u2713 ' + ( window.readninjaAdminUi && window.readninjaAdminUi.saved || 'Réglages enregistrés' );
+            btn.classList.add( 'readninja-save-success' );
             setTimeout( function () {
                 btn.value = originalLabel;
-                btn.classList.remove( 'rpb-save-success' );
+                btn.classList.remove( 'readninja-save-success' );
             }, 2500 );
         }
     }
 
     // ---- Analytics table: client-side column sort ----------------------------
-    var table = document.getElementById( 'rpb-analytics-table' );
+    var table = document.getElementById( 'readninja-analytics-table' );
     if ( table ) {
         var headers  = table.querySelectorAll( 'thead th[data-col]' );
         var tbody    = table.querySelector( 'tbody' );
@@ -56,10 +56,10 @@
 
     // ---- Settings preview: gradient awareness + color field disabling --------
 
-    var bar = document.getElementById( 'rpb-preview-bar' );
+    var bar = document.getElementById( 'readninja-preview-bar' );
     if ( ! bar ) { return; }
 
-    var s = ( typeof rpbAdminSettings !== 'undefined' && rpbAdminSettings.current ) ? rpbAdminSettings.current : {};
+    var s = ( typeof readninjaAdminSettings !== 'undefined' && readninjaAdminSettings.current ) ? readninjaAdminSettings.current : {};
 
     function getVal( id, fallback ) {
         var el = document.getElementById( id );
@@ -72,21 +72,21 @@
     }
 
     function updatePreview() {
-        var container = document.getElementById( 'rpb-preview' );
+        var container = document.getElementById( 'readninja-preview' );
 
         // --- Free settings ---
-        var color    = getVal( 'rpb_color',    s.color    || '#1D9E75' );
-        var height   = Math.max( 2, parseFloat( getVal( 'rpb_height', s.height || 4 ) ) );
-        var opacity  = parseFloat( getVal( 'rpb_opacity', s.opacity || 100 ) ) / 100;
-        var position = getVal( 'rpb_position', s.position || 'top' );
+        var color    = getVal( 'readninja_color',    s.color    || '#1D9E75' );
+        var height   = Math.max( 2, parseFloat( getVal( 'readninja_height', s.height || 4 ) ) );
+        var opacity  = parseFloat( getVal( 'readninja_opacity', s.opacity || 100 ) ) / 100;
+        var position = getVal( 'readninja_position', s.position || 'top' );
 
         // --- Fond de la barre : bande pleine largeur derrière la barre ---
-        var bgColor = getVal( 'rpb_background_color', s.background_color || '' );
-        var track   = document.getElementById( 'rpb-preview-track' );
+        var bgColor = getVal( 'readninja_background_color', s.background_color || '' );
+        var track   = document.getElementById( 'readninja-preview-track' );
         if ( bgColor ) {
             if ( ! track && container ) {
                 track = document.createElement( 'div' );
-                track.id = 'rpb-preview-track';
+                track.id = 'readninja-preview-track';
                 container.insertBefore( track, container.firstChild );
             }
             if ( track ) {
@@ -106,13 +106,13 @@
         }
 
         // --- Position custom : notice informatif ---
-        var customSel   = getVal( 'rpb_custom_selector', s.custom_selector || '' );
-        var notice      = document.getElementById( 'rpb-custom-pos-notice' );
-        var placeholder = document.getElementById( 'rpb-preview-placeholder' );
+        var customSel   = getVal( 'readninja_custom_selector', s.custom_selector || '' );
+        var notice      = document.getElementById( 'readninja-custom-pos-notice' );
+        var placeholder = document.getElementById( 'readninja-preview-placeholder' );
         if ( position === 'custom' ) {
             if ( ! notice && placeholder ) {
                 notice = document.createElement( 'p' );
-                notice.id = 'rpb-custom-pos-notice';
+                notice.id = 'readninja-custom-pos-notice';
                 notice.style.cssText = 'margin:8px 0 0;font-size:12px;color:#757575;font-style:italic;line-height:1.4';
                 placeholder.appendChild( notice );
             }
@@ -130,10 +130,10 @@
         // the custom-position notice, and disabling the solid color field when
         // gradient is active.
         var grad   = s.gradient || {};
-        var gradOn = getChecked( 'rpb_gradient_enabled', grad.enabled );
+        var gradOn = getChecked( 'readninja_gradient_enabled', grad.enabled );
 
         // --- Disable/re-enable the solid color field when gradient is active ---
-        var colorEl = document.getElementById( 'rpb_color' );
+        var colorEl = document.getElementById( 'readninja_color' );
         if ( colorEl ) {
             colorEl.disabled = gradOn;
             var tr = colorEl.closest( 'tr' );
@@ -142,23 +142,23 @@
     }
 
     // Expose globally pour le bouton Réinitialiser du fond de barre
-    window.rpbUpdatePreview = updatePreview;
+    window.readninjaUpdatePreview = updatePreview;
 
     // Run once on load, then on every relevant change
     updatePreview();
 
     [
-        'rpb_color',
-        'rpb_height',
-        'rpb_opacity',
-        'rpb_position',
-        'rpb_background_color_picker',
-        'rpb_custom_selector',
-        'rpb_gradient_enabled',
-        'rpb_gradient_color_start',
-        'rpb_gradient_color_end',
-        'rpb_gradient_direction',
-        'rpb_gradient_angle',
+        'readninja_color',
+        'readninja_height',
+        'readninja_opacity',
+        'readninja_position',
+        'readninja_background_color_picker',
+        'readninja_custom_selector',
+        'readninja_gradient_enabled',
+        'readninja_gradient_color_start',
+        'readninja_gradient_color_end',
+        'readninja_gradient_direction',
+        'readninja_gradient_angle',
     ].forEach( function ( id ) {
         var el = document.getElementById( id );
         if ( ! el ) { return; }

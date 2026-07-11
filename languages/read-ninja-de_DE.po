@@ -230,11 +230,11 @@ msgstr "Der Balken wird in Echtzeit aktualisiert."
 msgid "Enregistrer les réglages"
 msgstr "Einstellungen speichern"
 
-#: includes/class-rpb-upgrade.php:315
+#: includes/class-readninja-upgrade.php:315
 msgid "Passer à Pro"
 msgstr "Auf Pro upgraden"
 
-#: includes/class-rpb-upgrade.php:301
+#: includes/class-readninja-upgrade.php:301
 msgid "En savoir plus →"
 msgstr "Mehr erfahren →"
 
@@ -368,7 +368,7 @@ msgstr "Text vor der Zeit. Beispiel: „Noch“ → „Noch 3 Min. verbleibend�
 msgid "Texte affiché après le temps. Exemple : « min restantes »."
 msgstr "Text nach der Zeit. Beispiel: „Min. verbleibend“."
 
-#: includes/class-rpb-upgrade.php:230
+#: includes/class-readninja-upgrade.php:230
 msgid "Analytics"
 msgstr "Statistiken"
 
@@ -440,115 +440,115 @@ msgstr "https://read-ninja.com"
 msgid "Read Ninja - Reading Progress Bar"
 msgstr "Read Ninja - Reading Progress Bar"
 
-#: includes/class-rpb-upgrade.php:69
+#: includes/class-readninja-upgrade.php:69
 msgid "Fonctionnalités Pro"
 msgstr "Pro-Funktionen"
 
-#: includes/class-rpb-upgrade.php:92
+#: includes/class-readninja-upgrade.php:92
 msgid "Ces fonctionnalités sont disponibles dans ReadNinja Pro. Cliquez sur « Débloquer » pour les activer."
 msgstr "Diese Funktionen sind in ReadNinja Pro verfügbar. Klicke auf „Freischalten“, um sie zu aktivieren."
 
-#: includes/class-rpb-upgrade.php:103
+#: includes/class-readninja-upgrade.php:103
 msgid "Aperçu Pro"
 msgstr "Pro-Vorschau"
 
-#: includes/class-rpb-upgrade.php:115
+#: includes/class-readninja-upgrade.php:115
 msgid "Débloquer avec Pro →"
 msgstr "Mit Pro freischalten →"
 
-#: includes/class-rpb-upgrade.php:124
+#: includes/class-readninja-upgrade.php:124
 msgid "Barre en dégradé"
 msgstr "Balken mit Farbverlauf"
 
-#: includes/class-rpb-upgrade.php:125
+#: includes/class-readninja-upgrade.php:125
 msgid "Remplacez la couleur unie par un dégradé de 2 couleurs avec angle personnalisable."
 msgstr "Ersetze die einfarbige Farbe durch einen 2-Farben-Verlauf mit anpassbarem Winkel."
 
-#: includes/class-rpb-upgrade.php:129
+#: includes/class-readninja-upgrade.php:129
 msgid "Avancement séquentiel"
 msgstr "Schrittweiser Fortschritt"
 
-#: includes/class-rpb-upgrade.php:130
+#: includes/class-readninja-upgrade.php:130
 msgid "Faites avancer la barre par paliers fixes (5, 10, 25 %) avec animation fluide."
 msgstr "Lass den Balken in festen Schritten (5, 10, 25 %) mit flüssiger Animation vorrücken."
 
-#: includes/class-rpb-upgrade.php:134
+#: includes/class-readninja-upgrade.php:134
 msgid "Threshold trigger"
 msgstr "Threshold Trigger"
 
-#: includes/class-rpb-upgrade.php:135
+#: includes/class-readninja-upgrade.php:135
 msgid "Déclenchez une action JS personnalisée à un seuil de lecture (75 %, 90 %…)."
 msgstr "Löse eine benutzerdefinierte JS-Aktion bei einem Lese-Schwellenwert (75 %, 90 %…) aus."
 
-#: includes/class-rpb-upgrade.php:139
+#: includes/class-readninja-upgrade.php:139
 msgid "Conditions d'affichage avancées"
 msgstr "Erweiterte Anzeigebedingungen"
 
-#: includes/class-rpb-upgrade.php:140
+#: includes/class-readninja-upgrade.php:140
 msgid "Ciblez les CPT, archives, taxonomies et templates FSE de votre choix."
 msgstr "Ziele auf die CPTs, Archive, Taxonomien und FSE-Templates deiner Wahl."
 
-#: includes/class-rpb-upgrade.php:144
+#: includes/class-readninja-upgrade.php:144
 msgid "Analytics de lecture"
 msgstr "Lese-Analytics"
 
-#: includes/class-rpb-upgrade.php:145
+#: includes/class-readninja-upgrade.php:145
 msgid "Mesurez la profondeur de lecture et le taux de complétion par article."
 msgstr "Miss die Lesetiefe und Abschlussrate pro Beitrag."
 
-#: includes/class-rpb-upgrade.php:149
+#: includes/class-readninja-upgrade.php:149
 msgid "Personnalisation par article"
 msgstr "Anpassung pro Beitrag"
 
-#: includes/class-rpb-upgrade.php:150
+#: includes/class-readninja-upgrade.php:150
 msgid "Définissez la couleur, la hauteur ou le dégradé spécifique d'un article."
 msgstr "Lege die spezifische Farbe, Höhe oder den Verlauf eines Beitrags fest."
 
-#: includes/class-rpb-upgrade.php:190
+#: includes/class-readninja-upgrade.php:190
 msgid "Merci d'utiliser ReadNinja ! Débloquez les analytics de lecture, les dégradés et le ciblage avancé avec ReadNinja Pro."
 msgstr "Danke, dass du ReadNinja nutzt! Schalte Lese-Analytics, Farbverläufe und erweitertes Targeting mit ReadNinja Pro frei."
 
-#: includes/class-rpb-upgrade.php:193
+#: includes/class-readninja-upgrade.php:193
 msgid "Découvrir Pro →"
 msgstr "Pro entdecken →"
 
-#: includes/class-rpb-upgrade.php:240
+#: includes/class-readninja-upgrade.php:240
 msgid "Analytics de lecture — ReadNinja Pro"
 msgstr "Lese-Analytics — ReadNinja Pro"
 
-#: includes/class-rpb-upgrade.php:244
+#: includes/class-readninja-upgrade.php:244
 msgid "Voyez jusqu'où scrollent vos lecteurs sur chaque article"
 msgstr "Sieh, wie weit deine Leser auf jedem Beitrag scrollen"
 
-#: includes/class-rpb-upgrade.php:245
+#: includes/class-readninja-upgrade.php:245
 msgid "Identifiez vos contenus les plus engageants"
 msgstr "Erkenne deine fesselndsten Inhalte"
 
-#: includes/class-rpb-upgrade.php:246
+#: includes/class-readninja-upgrade.php:246
 msgid "Optimisez vos articles grâce aux données réelles"
 msgstr "Optimiere deine Beiträge mit echten Daten"
 
-#: includes/class-rpb-upgrade.php:274
+#: includes/class-readninja-upgrade.php:274
 msgid "Débloquez les analytics"
 msgstr "Analytics freischalten"
 
-#: includes/class-rpb-upgrade.php:277
+#: includes/class-readninja-upgrade.php:277
 msgid "Passer à ReadNinja Pro — dès 29€/an"
 msgstr "Auf ReadNinja Pro upgraden — ab 29 €/Jahr"
 
-#: includes/class-rpb-upgrade.php:280
+#: includes/class-readninja-upgrade.php:280
 msgid "Satisfait ou remboursé 30 jours"
 msgstr "30 Tage Geld-zurück-Garantie"
 
-#: includes/class-rpb-upgrade.php:299
+#: includes/class-readninja-upgrade.php:299
 msgid "ReadNinja Pro — Analytics · Dégradés · Ciblage avancé · Support prioritaire"
 msgstr "ReadNinja Pro — Analytics · Farbverläufe · Erweitertes Targeting · Prioritäts-Support"
 
-#: includes/class-rpb-upgrade.php:328
+#: includes/class-readninja-upgrade.php:328
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: includes/class-rpb-upgrade.php:333
+#: includes/class-readninja-upgrade.php:333
 msgid "Support"
 msgstr "Support"
 
